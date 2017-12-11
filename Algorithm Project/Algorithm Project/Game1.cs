@@ -11,6 +11,7 @@ namespace Algorithm_Project
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        int test;
 
         public Game1()
         {
