@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,11 @@ namespace Algorithm_Project
     class Node : Component
     {
         public string output;
+
+        /// <summary>
+        /// A List that contains all components on this GameObject
+        /// </summary>
+        private List<Component> components = new List<Component>();
 
         /// <summary>
         /// The grid position of the node
@@ -53,6 +59,37 @@ namespace Algorithm_Project
 
             float results = (position.X * nodeSize) + (position.Y * nodeSize) + 10;
             output = Convert.ToString(results);
+        }
+
+        /// <summary>
+        /// Loads the GameObject's content, this is where we load sounds, sprites etc.
+        /// </summary>
+        /// <param name="content">The Content form the GameWorld</param>
+        public void LoadContent(ContentManager content)
+        {
+            //Loads all loadable components
+            foreach (Component component in components)
+            {
+                if (component is ILoadable)
+                {
+                    (component as ILoadable).LoadContent(content);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Draws the GameObject
+        /// </summary>
+        /// <param name="spriteBatch">The spritebatch from our GameWorld</param>
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach (Component component in components)
+            {
+                if (component is IDrawable)
+                {
+                    (component as IDrawable).Draw(spriteBatch);
+                }
+            }
         }
     }
 }

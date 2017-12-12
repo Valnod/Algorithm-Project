@@ -24,7 +24,7 @@ namespace Algorithm_Project
         /// <summary>
         /// This list contains all nodes
         /// </summary>
-        private List<GameObject> grid;
+        private List<Node> grid;
 
         /// <summary>
         /// Creates a list of GameObjects
@@ -72,23 +72,26 @@ namespace Algorithm_Project
             gameObjects = new List<GameObject>();
 
             //Instantiates the list of nodes
-            grid = new List<GameObject>();
+            grid = new List<Node>();
 
             //Adds a GameObject to the game
             GameObject go = new GameObject();
 
-            go.AddComponent(new SpriteRenderer(go, "groundSingleTile", 1));
+            GameObject node = new GameObject();
+
+            node.AddComponent(new SpriteRenderer(node, "groundSingleTile", 1));
 
             //Sets the tile size
             int tileSize = displayRectangle.Width / tileRowCount;
 
             //Creates all the tiles
-            for (int x = 0; x < tileRowCount; x++)
+            for (int x = 0; x <= tileRowCount; x++)
             {
-                for (int y = 0; y < tileRowCount; y++)
+                for (int y = 0; y <= tileRowCount; y++)
                 {
-                    go.AddComponent(new Node(go, new Vector2(x, y), tileSize));
-                    grid.Add(go);
+                    grid.Add(new Node(node, new Vector2(x, y), tileSize));
+                    //go.AddComponent(new Node(go, new Vector2(x, y), tileSize));
+                    //grid.Add(go);
                 }
             }
 
@@ -168,7 +171,7 @@ namespace Algorithm_Project
                 go.Draw(spriteBatch);
             }
 
-            foreach (GameObject node in grid)
+            foreach (Node node in grid)
             {
                 node.Draw(spriteBatch);
                 //Font1 = Content.Load<SpriteFont>("Arial");
