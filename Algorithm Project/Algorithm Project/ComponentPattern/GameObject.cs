@@ -8,13 +8,8 @@ using System.Text;
 
 namespace Algorithm_Project
 {
-    class GameObject : Component
+    class GameObject
     {
-        /// <summary>
-        /// The GameObject's sprite
-        /// </summary>
-        private Texture2D sprite;
-
         /// <summary>
         /// The GameObject's transform
         /// </summary>
@@ -23,17 +18,17 @@ namespace Algorithm_Project
         /// <summary>
         /// A List that contains all components on this GameObject
         /// </summary>
-        private List<Component> components;
+        private List<Component> components = new List<Component>();
 
         /// <summary>
         /// The GameObject's constructor
         /// </summary>
         public GameObject()
         {
-            components = new List<Component>();
             //Adds a transform component to the GameObject
             this.transform = new Transform(this, Vector2.Zero);
-            AddComponent(transform);
+
+            AddComponent(transform);    
         }
 
         /// <summary>
@@ -42,8 +37,14 @@ namespace Algorithm_Project
         /// <param name="content">The Content form the GameWorld</param>
         public void LoadContent(ContentManager content)
         {
-            //Loads the Hero.png into the sprite variable
-            sprite = content.Load<Texture2D>("wizardFront");
+            //Loads all loadable components
+            foreach (Component component in components)
+            {
+                if (component is ILoadable)
+                {
+                    (component as ILoadable).LoadContent(content);
+                }
+            }
         }
 
         public void Update()
@@ -57,8 +58,13 @@ namespace Algorithm_Project
         /// <param name="spriteBatch">The spritebatch from our GameWorld</param>
         public void Draw(SpriteBatch spriteBatch)
         {
-            //Draws the GameObject by using the sprite and the position
-            spriteBatch.Draw(sprite, transform.position, Color.White);
+            foreach (Component component in components)
+            {
+                if (component is IDrawable)
+                {
+                    (component as IDrawable).Draw(spriteBatch);
+                }
+            }
         }
 
         /// <summary>

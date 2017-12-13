@@ -10,13 +10,28 @@ namespace Algorithm_Project
     /// </summary>
     public class GameWorld : Game
     {
+        //SpriteFont Font1;
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Rectangle displayRectangle;
+
+        /// <summary>
+        /// Amount of rows in the grid
+        /// </summary>
+        private int tileRowCount;
+
+        /// <summary>
+        /// This list contains all nodes
+        /// </summary>
+        private List<Node> grid;
 
         /// <summary>
         /// Creates a list of GameObjects
         /// </summary>
         private List<GameObject> gameObjects;
+
+        public float deltaTime { get; private set; }
 
         private static GameWorld instance;
 
@@ -48,12 +63,42 @@ namespace Algorithm_Project
         {
             // TODO: Add your initialization logic here
 
+            displayRectangle = GraphicsDevice.PresentationParameters.Bounds;
+
+            //Create the node grid
+            tileRowCount = 10;
+
             //Instantiates the list of GameObjects
             gameObjects = new List<GameObject>();
 
-            //Adds two GameObjects to the game
-            gameObjects.Add(new GameObject());
-            gameObjects.Add(new GameObject());
+            //Instantiates the list of nodes
+            grid = new List<Node>();
+
+            //Adds a GameObject to the game
+            GameObject go = new GameObject();
+
+            GameObject node = new GameObject();
+
+            node.AddComponent(new SpriteRenderer(node, "groundSingleTile", 1));
+
+            //Sets the tile size
+            int tileSize = displayRectangle.Width / tileRowCount;
+
+            //Creates all the tiles
+            for (int x = 0; x <= tileRowCount; x++)
+            {
+                for (int y = 0; y <= tileRowCount; y++)
+                {
+                    grid.Add(new Node(node, new Vector2(x, y), tileSize));
+                    //go.AddComponent(new Node(go, new Vector2(x, y), tileSize));
+                    //grid.Add(go);
+                }
+            }
+
+            //Creates the wizard object
+            go.AddComponent(new SpriteRenderer(go, "wizardFront", 1));
+            go.transform.position = new Vector2();
+            gameObjects.Add(go);
 
             base.Initialize();
         }
@@ -97,6 +142,8 @@ namespace Algorithm_Project
 
             // TODO: Add your update logic here
 
+            deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
             //Updates all GameObjects
             foreach (GameObject go in gameObjects)
             {
@@ -122,6 +169,13 @@ namespace Algorithm_Project
             foreach (GameObject go in gameObjects)
             {
                 go.Draw(spriteBatch);
+            }
+
+            foreach (Node node in grid)
+            {
+                node.Draw(spriteBatch);
+                //Font1 = Content.Load<SpriteFont>("Arial");
+                //spriteBatch.DrawString(string.Format(Font1, node.output, node.gameObject.transform.position), node.BoundingRectangle, Color.Black);
             }
 
             spriteBatch.End();

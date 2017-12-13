@@ -12,7 +12,7 @@ namespace Algorithm_Project
         /// <summary>
         /// The transform's position
         /// </summary>
-        public Vector2 position { get; private set; }
+        public Vector2 position { get; set; }
 
         /// <summary>
         /// The constructor of the transform
@@ -22,6 +22,16 @@ namespace Algorithm_Project
         public Transform(GameObject gameObject, Vector2 position) : base(gameObject)
         {
             this.position = position;
+        }
+
+        /// <summary>
+        /// Adds a translation to the transform position
+        /// </summary>
+        /// <param name="translation"></param>
+        public void Translate(Vector2 translation)
+        {
+            //Adds the translation to the position
+            position += translation;
         }
     }
 }

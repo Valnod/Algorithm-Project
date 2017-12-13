@@ -22,9 +22,5 @@ namespace Algorithm_Project
             //Sets the parent
             this.gameObject = gameObject;
         }
-
-        public Component()
-        {
-        }
     }
 }
