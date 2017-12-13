@@ -9,9 +9,7 @@ namespace Grid
     class Astar
     {
         #region Variables
-        public GridManager gridManager = new GridManager(;
-
-        private graphics
+       
         /// <summary>
         /// Closed list with confirmed candidates for the pathfinding
         /// </summary>
@@ -46,12 +44,12 @@ namespace Grid
         public void CreateOpenList()
         {
             openList = new List<Cell>();
-            bool isSTART = gridManager.Grid.GetType().IsEnum.Equals(CellType.START);
-            foreach (Cell cell in gridManager.Grid)
-            {
-                if (cell.GetType().IsEnum == isSTART)
-                    openList.Add(cell); // puts start cell in the open list
-            }
+            //bool isSTART = gridManager.Grid.GetType().IsEnum.Equals(CellType.START);
+            //foreach (Cell cell in gridManager.Grid)
+            //{
+            //    if (cell.GetType().IsEnum == isSTART)
+            //        openList.Add(cell); // puts start cell in the open list
+            //}
 
             Console.WriteLine(openList);
             Console.Write(openList.Capacity); //Debug

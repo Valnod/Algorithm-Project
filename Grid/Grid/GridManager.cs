@@ -34,9 +34,9 @@ namespace Grid
 
         public List<Cell> Grid { get { return grid; } }
 
-        public BufferedGraphics BackBuffer { get => backBuffer; set => backBuffer = value; }
-        public Graphics Dc { get => dc; set => dc = value; }
-        public Rectangle DisplayRectangle { get => displayRectangle; set => displayRectangle = value; }
+        //public BufferedGraphics BackBuffer { get => backBuffer; set => backBuffer = value; }
+        //public Graphics Dc { get => dc; set => dc = value; }
+        //public Rectangle DisplayRectangle { get => displayRectangle; set => displayRectangle = value; }
 
         public GridManager(Graphics dc, Rectangle displayRectangle)
         {
