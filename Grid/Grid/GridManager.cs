@@ -206,9 +206,9 @@ namespace Grid
                 {
                     cell.Click(ref clickType);
                 }
-
             }
         }
+<<<<<<< HEAD
 
         /// <summary>
         /// Creates an open list based on the grid in the game.
@@ -277,5 +277,7 @@ namespace Grid
         }
 
 
+=======
+>>>>>>> c5e3c0adba5da362d48216cc54b27f8373c8e9f4
     }
 }
