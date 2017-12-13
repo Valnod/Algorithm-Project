@@ -90,6 +90,9 @@
     <Content Include="Images\key.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\key2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\oneEyeMonster.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

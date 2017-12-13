@@ -278,10 +278,12 @@ namespace Grid
         /// <param name="mousePos"></param>
         public void SpriteCell()
         {
-            grid[1, 6].sprite = portal;
-            grid[2, 6].sprite = wizard;
+            grid[1, 7].sprite = portal;
+            grid[2, 7].sprite = wizard;
             grid[2, 2].sprite = tower1;
-            grid[8, 4].sprite = tower2;            
+            grid[8, 5].sprite = tower2;
+            grid[rnd.Next(0, 9), rnd.Next(0, 1)].sprite = key1;
+            grid[rnd.Next(0, 9), rnd.Next(3, 4)].sprite = key2;            
 
             //grid[2, 6].Click(ref clickType); //Wizard
             //grid[2, 3].Click(ref clickType); //Tower1
