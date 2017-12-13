@@ -131,7 +131,8 @@ namespace Grid
         }
 
         public void CalculateH(Cell endInput)
-        {
+        { 
+            //TODO: Find celltype of endInput, e.g.: Grid[x,y].myType -- (myType is CellType)
             int xConst = 0;
             int yConst = 0;
             for (int a = Grid[endInput.X, endInput.Y].X - xConst; a > Grid.GetLowerBound(0); xConst++)
