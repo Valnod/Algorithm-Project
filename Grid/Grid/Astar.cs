@@ -1,53 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace Grid
-{
-    class Astar
-    {
-        #region Variables
-       
-        /// <summary>
-        /// Closed list with confirmed candidates for the pathfinding
-        /// </summary>
-        private List<Cell> closedList;
+//namespace Grid
+//{
+//    class Astar
+//    {
+//        #region Variables
 
-        /// <summary>
-        /// List of currently discovered nodes.
-        /// </summary>
-        private List<Cell> openList;
-#endregion
+//        /// <summary>
+//        /// Closed list with confirmed candidates for the pathfinding
+//        /// </summary>
+//        private List<Cell> closedList;
 
-        #region Properties
-        //F(x) = G(x) + H(x)
-        public int FScore { get; set; }
-        public int GScore { get; set; }
-        public int HScore { get; set; }
+//        /// <summary>
+//        /// List of currently discovered nodes.
+//        /// </summary>
+//        private List<Cell> openList;
+//        #endregion
 
-        public List<Cell> ClosedList { get { return closedList; } set { closedList = value; } }
-        public List<Cell> OpenList { get { return openList; } set { openList = value; } }
-#endregion
+//        #region Properties
+//        //F(x) = G(x) + H(x)
+//        public int FScore { get; set; }
+//        public int GScore { get; set; }
+//        public int HScore { get; set; }
 
-        public Astar()
-        {
-           // CreateClosedList();
-            CreateOpenList();
-        }
+//        public List<Cell> ClosedList { get { return closedList; } set { closedList = value; } }
+//        public List<Cell> OpenList { get { return openList; } set { openList = value; } }
+//        #endregion
 
-        #region Methods
-        
-        
-        ///// <summary>
-        ///// creates a closed list based on grid in the game
-        ///// </summary>
-        //public void CreateClosedList()
-        //{
-        //    closedList = new List<Cell>();
-        //    closedList = gridManager.Grid; // assigns the grid layout to closed list
-        //}
-#endregion
-    }
-}
+//        public Astar()
+//        {
+//            // CreateClosedList();
+//            //CreateOpenList();
+//        }
+
+//        #region Methods
+
+
+//        ///// <summary>
+//        ///// creates a closed list based on grid in the game
+//        ///// </summary>
+//        //public void CreateClosedList()
+//        //{
+//        //    closedList = new List<Cell>();
+//        //    closedList = gridManager.Grid; // assigns the grid layout to closed list
+//        //}
+//        #endregion
+//    }
+//}

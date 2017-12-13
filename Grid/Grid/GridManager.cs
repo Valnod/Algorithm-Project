@@ -28,7 +28,7 @@ namespace Grid
         /// </summary>
         private Cell[,] grid;
 
-        private Astar aStar;
+      //  private Astar aStar;
 
         /// <summary>
         /// The current click type
@@ -56,8 +56,8 @@ namespace Grid
             cellRowCount = 10;
 
             CreateGrid(10,10);
-            aStar = new Astar();
-            Console.WriteLine("{0}{1}{2}");
+            //aStar = new Astar();
+            //Console.WriteLine("{0}{1}{2}");
         }
 
         public Cell this[int x, int y]
@@ -120,15 +120,17 @@ namespace Grid
                 {
                     if (a != Grid[input.X, input.Y].X && Grid[input.X, input.Y].Walkable || b != Grid[input.X, input.Y].Y && Grid[input.X, input.Y].Walkable)
                     {
+                        //Sees if nodes un-diagonal next to current node are walkable
                         if (a == Grid[input.X, input.Y].X && b == Grid[input.X, input.Y].Y - 1 || a == Grid[input.X, input.Y].X - 1 && b == Grid[input.X, input.Y].Y
                             || a == Grid[input.X, input.Y].X && b == Grid[input.X, input.Y].Y || a == Grid[input.X, input.Y].X + 1 && b == Grid[input.X, input.Y].Y)
                         {
-                            Grid[a, b].G = 10;
+                            Grid[a, b].G = 10; // Returns the linear value of 10 to the G-score of the current node
                             if (!OpenList.Contains(Grid[a, b]))
                             {
                                 OpenList.Add(Grid[a, b]);
                             }
                         }
+                        //Otherwise, if diagonal, return G-score of 14
                         else
                         {
                             Grid[a, b].G = 14;
@@ -209,7 +211,6 @@ namespace Grid
                 }
             }
         }
-<<<<<<< HEAD
 
         /// <summary>
         /// Creates an open list based on the grid in the game.
@@ -268,17 +269,14 @@ namespace Grid
                 OpenList.Remove(best);
                 parent = best;
             }
-            
+            return null; //TODO: something
         }
 
         public Cell GeneratePath(Cell parent, Cell best)
         {
-
+            throw new NotImplementedException();//herpaderp
             
         }
 
-
-=======
->>>>>>> c5e3c0adba5da362d48216cc54b27f8373c8e9f4
     }
 }
