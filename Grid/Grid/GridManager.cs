@@ -15,6 +15,13 @@ namespace Grid
         private Graphics dc;
         private Rectangle displayRectangle;
 
+        Image portal = Image.FromFile(@"Images\portalA.png"); //Portal
+        Image wizard = Image.FromFile(@"Images\wizardFront.png"); //Startobject
+        Image tower1 = Image.FromFile(@"Images\tower.png"); //Tower1
+        Image tower2 = Image.FromFile(@"Images\portalB.png"); //Endobject
+        Image key1 = Image.FromFile(@"Images\key.png"); //First key
+        Image key2 = Image.FromFile(@"Images\key.png"); //Second key
+
         public List<Cell> ClosedList { get; set; }
         public List<Cell> OpenList { get; set; }
 
@@ -28,12 +35,14 @@ namespace Grid
         /// </summary>
         private Cell[,] grid;
 
-      //  private Astar aStar;
+        //  private Astar aStar;
+
+        Random rnd = new Random();
 
         /// <summary>
         /// The current click type
         /// </summary>
-        private CellType clickType;
+        //private CellType clickType;
 
         public Cell[,] Grid { get { return grid; } }
 
@@ -269,22 +278,14 @@ namespace Grid
         /// <param name="mousePos"></param>
         public void SpriteCell()
         {
+            grid[1, 6].sprite = portal;
+            grid[2, 6].sprite = wizard;
+            grid[2, 2].sprite = tower1;
+            grid[8, 4].sprite = tower2;            
 
-            foreach (Cell cell in grid) //Finds the cell that we just clicked
-            {
-                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(new Point(100, 500), new Size(1, 1))))
-                {
-                    cell.Click(ref clickType); //Wizard
-                }
-                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(new Point(300, 500), new Size(1, 1))))
-                {
-                    cell.Click(ref clickType); //Tower1
-                }
-                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(new Point(400, 200), new Size(1, 1))))
-                {
-                    cell.Click(ref clickType); //Tower2
-                }
-            }
+            //grid[2, 6].Click(ref clickType); //Wizard
+            //grid[2, 3].Click(ref clickType); //Tower1
+            //grid[rnd.Next(0, 10), rnd.Next(0, 10)].Click(ref clickType);
         }
 
         ///// <summary>

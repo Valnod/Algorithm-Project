@@ -39,7 +39,7 @@ namespace Grid
         /// <summary>
         /// The cell's sprite
         /// </summary>
-        private Image sprite;
+        public Image sprite;
 
         /// <summary>
         /// Sets the celltype to empty as default
@@ -84,6 +84,8 @@ namespace Grid
         {
             //Draws the rectangles color
             dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
+
+            dc.DrawImage(Image.FromFile(@"Images\groundSingleTile.png"), BoundingRectangle); //Need to resize
 
             //Draws the rectangles border
             dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);
