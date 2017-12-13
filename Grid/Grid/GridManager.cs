@@ -15,6 +15,9 @@ namespace Grid
         private Graphics dc;
         private Rectangle displayRectangle;
 
+        public List<Cell> ClosedList { get; set; }
+        public List<Cell> OpenList { get; set; }
+
         /// <summary>
         /// Amount of rows in the grid
         /// </summary>
@@ -106,6 +109,7 @@ namespace Grid
                     this[x,y] = new Cell(new Point(x, y), cellSize);
                 }
             }
+            CreateOpenList();
         }
 
         public void CalculateG(Cell input)
@@ -120,10 +124,18 @@ namespace Grid
                             || a == Grid[input.X, input.Y].X && b == Grid[input.X, input.Y].Y || a == Grid[input.X, input.Y].X + 1 && b == Grid[input.X, input.Y].Y)
                         {
                             Grid[a, b].G = 10;
+                            if (!OpenList.Contains(Grid[a, b]))
+                            {
+                                OpenList.Add(Grid[a, b]);
+                            }
                         }
                         else
                         {
                             Grid[a, b].G = 14;
+                            if (!OpenList.Contains(Grid[a, b]))
+                            {
+                                OpenList.Add(Grid[a, b]);
+                            }
                         }
                     }
                 }
@@ -197,5 +209,76 @@ namespace Grid
                 }
             }
         }
+<<<<<<< HEAD
+
+        /// <summary>
+        /// Creates an open list based on the grid in the game.
+        /// </summary>
+        public void CreateOpenList()
+        {
+            OpenList = new List<Cell>();
+            bool isSTART = Grid.GetType().IsEnum.Equals(CellType.START);
+            foreach (Cell cell in Grid)
+            {
+                if (cell.GetType().IsEnum == isSTART)
+                    OpenList.Add(cell); // puts start cell in the open list
+            }
+
+            Console.WriteLine(OpenList);
+            Console.Write(OpenList.Capacity); //Debug
+        }
+
+
+        public void CreateClosedList()
+        {
+            ClosedList = new List<Cell>();
+
+        }
+
+        public Cell AStar(Cell start, Cell end)
+        {
+            Cell best = null;
+            Cell parent = null;
+            CreateClosedList();
+            CalculateH(end);
+            Grid[start.X, start.Y].G = 0;
+            ClosedList.Add(start);
+            
+            parent = start;
+            while(OpenList.Count > 0)
+            {
+                if(best == end)
+                {
+                    return GeneratePath(parent, best);
+                }
+                if (OpenList.Contains(start))
+                {
+                    OpenList.Remove(start);
+                }
+                
+                CalculateG(parent);
+                foreach (Cell cell in OpenList)
+                {
+                    if (best == null || cell.F < best.F)
+                    {
+                        best = cell;
+                    }
+                }
+                ClosedList.Add(best);
+                OpenList.Remove(best);
+                parent = best;
+            }
+            
+        }
+
+        public Cell GeneratePath(Cell parent, Cell best)
+        {
+
+            
+        }
+
+
+=======
+>>>>>>> c5e3c0adba5da362d48216cc54b27f8373c8e9f4
     }
 }
