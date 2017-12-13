@@ -50,3 +50,16 @@ D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe
 D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Grid.pdb
 D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.exe
 D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.pdb
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Wall.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Goal.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Start.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe.config
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Grid.pdb
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.Form1.resources
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.exe
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.pdb
