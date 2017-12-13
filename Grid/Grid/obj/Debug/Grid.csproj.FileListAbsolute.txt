@@ -63,3 +63,6 @@ C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csproj.Ge
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.exe
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.pdb
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Grid.exe.config
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.exe
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.pdb

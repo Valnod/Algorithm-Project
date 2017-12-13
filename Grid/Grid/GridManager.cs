@@ -194,10 +194,7 @@ namespace Grid
                 {
                     cell.Click(ref clickType);
                 }
-
             }
         }
-
-
     }
 }
