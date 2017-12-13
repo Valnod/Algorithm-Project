@@ -38,22 +38,7 @@ namespace Grid
         }
 
         #region Methods
-        /// <summary>
-        /// Creates an open list based on the grid in the game.
-        /// </summary>
-        public void CreateOpenList()
-        {
-            openList = new List<Cell>();
-            //bool isSTART = gridManager.Grid.GetType().IsEnum.Equals(CellType.START);
-            //foreach (Cell cell in gridManager.Grid)
-            //{
-            //    if (cell.GetType().IsEnum == isSTART)
-            //        openList.Add(cell); // puts start cell in the open list
-            //}
-
-            Console.WriteLine(openList);
-            Console.Write(openList.Capacity); //Debug
-        }
+        
         
         ///// <summary>
         ///// creates a closed list based on grid in the game
