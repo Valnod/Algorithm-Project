@@ -17,6 +17,20 @@ namespace Grid
         /// </summary>
         private Point position;
 
+        public int F
+        {
+            get
+            {
+                return G + H;
+            }
+        }
+        public int G { get; set; }
+        public int H { get; set; }
+        public bool Walkable { get; set; }
+
+        public int X { get; set; }
+        public int Y { get; set; }
+
         /// <summary>
         /// The size of the cell
         /// </summary>
