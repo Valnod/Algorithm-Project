@@ -35,6 +35,8 @@ namespace Grid
         {
             //Checks if we clicked a cell
             visualManager.ClickCell(this.PointToClient(Cursor.Position));
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                visualManager.AStar(visualManager.Grid[2, 5], visualManager.Grid[3, 7]);
         }
 
         private void Form1_Load(object sender, EventArgs e)
