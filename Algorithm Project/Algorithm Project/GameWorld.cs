@@ -24,7 +24,7 @@ namespace Algorithm_Project
         /// <summary>
         /// This list contains all nodes
         /// </summary>
-        private List<Node> grid;
+        private List<GameObject> grid;
 
         /// <summary>
         /// Creates a list of GameObjects
@@ -66,23 +66,23 @@ namespace Algorithm_Project
             displayRectangle = GraphicsDevice.PresentationParameters.Bounds;
 
             //Create the node grid
-            tileRowCount = 10;
+            tileRowCount = 5;
+
+            //Sets the tile size
+            //int tileSize = displayRectangle.Width / tileRowCount;
 
             //Instantiates the list of GameObjects
             gameObjects = new List<GameObject>();
 
             //Instantiates the list of nodes
-            grid = new List<Node>();
+            grid = new List<GameObject>();
 
             //Adds a GameObject to the game
             GameObject go = new GameObject();
 
-            GameObject node = new GameObject();
+            /*GameObject node = new GameObject();
 
             node.AddComponent(new SpriteRenderer(node, "groundSingleTile", 1));
-
-            //Sets the tile size
-            int tileSize = displayRectangle.Width / tileRowCount;
 
             //Creates all the tiles
             for (int x = 0; x <= tileRowCount; x++)
@@ -90,10 +90,10 @@ namespace Algorithm_Project
                 for (int y = 0; y <= tileRowCount; y++)
                 {
                     grid.Add(new Node(node, new Vector2(x, y), tileSize));
-                    //go.AddComponent(new Node(go, new Vector2(x, y), tileSize));
-                    //grid.Add(go);
                 }
-            }
+            }*/
+
+            CreateGrid();
 
             //Creates the wizard object
             go.AddComponent(new SpriteRenderer(go, "wizardFront", 1));
@@ -101,6 +101,26 @@ namespace Algorithm_Project
             gameObjects.Add(go);
 
             base.Initialize();
+        }
+
+        public void CreateGrid()
+        {
+            int tileSize = displayRectangle.Width / tileRowCount;
+
+            GameObject node = new GameObject();
+
+            node.AddComponent(new SpriteRenderer(node, "groundSingleTile", 1));
+
+            //Creates all the tiles
+            for (int x = 0; x <= tileRowCount; x++)
+            {
+                for (int y = 0; y <= tileRowCount; y++)
+                {
+                    node.AddComponent(new Node(node, new Vector2(x, y), tileSize));
+                    grid.Add(node);
+                    //grid.Add(new Node(node, new Vector2(x, y), tileSize));
+                }
+            }
         }
 
         /// <summary>
@@ -171,7 +191,7 @@ namespace Algorithm_Project
                 go.Draw(spriteBatch);
             }
 
-            foreach (Node node in grid)
+            foreach (GameObject node in grid)
             {
                 node.Draw(spriteBatch);
                 //Font1 = Content.Load<SpriteFont>("Arial");
