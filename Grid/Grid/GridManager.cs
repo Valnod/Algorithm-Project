@@ -198,21 +198,6 @@ namespace Grid
         }
 
         /// <summary>
-        /// If the mouse clicks on a cell
-        /// </summary>
-        /// <param name="mousePos"></param>
-        public void ClickCell(Point mousePos)
-        {
-            foreach (Cell cell in grid) //Finds the cell that we just clicked
-            {
-                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(mousePos, new Size(1, 1))))
-                {
-                    cell.Click(ref clickType);
-                }
-            }
-        }
-
-        /// <summary>
         /// Creates an open list based on the grid in the game.
         /// </summary>
         public void CreateOpenList()
@@ -278,5 +263,43 @@ namespace Grid
             
         }
 
+        /// <summary>
+        /// Create objects
+        /// </summary>
+        /// <param name="mousePos"></param>
+        public void SpriteCell()
+        {
+
+            foreach (Cell cell in grid) //Finds the cell that we just clicked
+            {
+                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(new Point(100, 500), new Size(1, 1))))
+                {
+                    cell.Click(ref clickType); //Wizard
+                }
+                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(new Point(300, 500), new Size(1, 1))))
+                {
+                    cell.Click(ref clickType); //Tower1
+                }
+                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(new Point(400, 200), new Size(1, 1))))
+                {
+                    cell.Click(ref clickType); //Tower2
+                }
+            }
+        }
+
+        ///// <summary>
+        ///// If the mouse clicks on a cell
+        ///// </summary>
+        ///// <param name="mousePos"></param>
+        //public void ClickCell(Point mousePos)
+        //{
+        //    foreach (Cell cell in grid) //Finds the cell that we just clicked
+        //    {
+        //        if (cell.BoundingRectangle.IntersectsWith(new Rectangle(mousePos, new Size(1, 1))))
+        //        {
+        //            cell.Click(ref clickType);
+        //        }
+        //    }
+        //}
     }
 }

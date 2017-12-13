@@ -23,6 +23,8 @@ namespace Grid
 
             //Instantiates the visual manager
             visualManager = new GridManager(CreateGraphics(), this.DisplayRectangle);
+
+            visualManager.SpriteCell();
         }
 
         private void Loop_Tick(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace Grid
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             //Checks if we clicked a cell
-            visualManager.ClickCell(this.PointToClient(Cursor.Position));
+            //visualManager.ClickCell(this.PointToClient(Cursor.Position));
         }
 
         private void Form1_Load(object sender, EventArgs e)
