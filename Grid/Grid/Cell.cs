@@ -8,7 +8,7 @@ using static Grid.CellType;
 
 namespace Grid
 {
-    public enum CellType { START, GOAL, WALL, EMPTY };
+    public enum CellType { START, GOAL, WALL, EMPTY, TOWER1, TOWER2, KEY1, KEY2 };
 
     public class Cell
     {
@@ -45,6 +45,9 @@ namespace Grid
         /// Sets the celltype to empty as default
         /// </summary>
         CellType myType = EMPTY;
+        private int wallCount;
+
+        //TODO: Maybe make myType as property so A* can check it
 
         public Point Position { get { return position; } }
 
@@ -71,7 +74,6 @@ namespace Grid
 
             //Sets the cell size
             this.cellSize = size;
-
         }
 
         /// <summary>
@@ -92,7 +94,6 @@ namespace Grid
                 dc.DrawImage(sprite, BoundingRectangle);
             }
 
-
             //Write's the cells grid position
             dc.DrawString(string.Format("{0}", position), new Font("Arial", 7, FontStyle.Regular), new SolidBrush(Color.Black), position.X * cellSize, (position.Y * cellSize) + 10);
         }
@@ -103,6 +104,7 @@ namespace Grid
         /// <param name="clickType">The click type</param>
         public void Click(ref CellType clickType)
         {
+            wallCount += 1;
             if (clickType == START) //If the click type is START
             {
                 sprite = Image.FromFile(@"Images\Start.png");
@@ -117,13 +119,18 @@ namespace Grid
             }
             else if (clickType == WALL && myType != START && myType != GOAL && myType != WALL) //If the click type is WALL
             {
+                clickType = KEY1;
                 sprite = Image.FromFile(@"Images\Wall.png");
                 myType = WALL;
             }
             else if (clickType == WALL && myType == WALL) //If the click type is WALL
-            {
+            { 
                 sprite = null;
                 myType = EMPTY;
+            }
+            else if (clickType == KEY1)
+            {
+                sprite = Image.FromFile(@"Images\key.png");
             }
         }
     }

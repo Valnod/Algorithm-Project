@@ -36,5 +36,10 @@ namespace Grid
             //Checks if we clicked a cell
             visualManager.ClickCell(this.PointToClient(Cursor.Position));
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
