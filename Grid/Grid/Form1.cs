@@ -14,7 +14,8 @@ namespace Grid
     public partial class Form1 : Form
     {
         private GridManager visualManager;
-
+        Button resetBtn = new Button();
+        
         bool first = true;
         private bool second = false;
         private bool third = false;
@@ -81,6 +82,7 @@ namespace Grid
                     visualManager.AStar(visualManager.Grid[visualManager.randomValueX2, visualManager.randomValueY2], visualManager.Grid[8, 5]);
                     visualManager.Grid[8, 5].sprite = visualManager.wizard;
                     fourth = false;
+                    Button1.Enabled = true;
                 }
             }
         }
@@ -88,6 +90,11 @@ namespace Grid
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
