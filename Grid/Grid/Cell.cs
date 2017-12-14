@@ -27,9 +27,7 @@ namespace Grid
         public int G { get; set; }
         public int H { get; set; }
         public bool Walkable { get; set; }
-
-        public int X { get; set; }
-        public int Y { get; set; }
+        
 
         /// <summary>
         /// The size of the cell
@@ -44,6 +42,8 @@ namespace Grid
         private Image grasTile = Image.FromFile(@"Images\groundTileUpdate.png"); //Default
         private Image pathTile = Image.FromFile(@"Images\PathUpdate.png"); //Path
 
+        public Image Sprite { get { return sprite; } set { sprite = value; } }
+
         /// <summary>
         /// Sets the celltype to empty as default
         /// </summary>
@@ -52,7 +52,7 @@ namespace Grid
 
         //TODO: Maybe make myType as property so A* can check it
 
-        public Point Position { get { return position; } }
+        public Point Position { get { return position; } set { position = value; } }
 
         /// <summary>
         /// The bounding rectangle of the cell

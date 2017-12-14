@@ -39,14 +39,14 @@ namespace Grid
         /// This list contains all cells and open list
         /// </summary>
         private Cell[,] grid;
-
-        //  private Astar aStar;
+       
 
         Random rnd = new Random();
-        int randomValueX;
-        int randomValueY;
+        public int randomValueX;
+        public int randomValueY;
         int randomValueX2;
         int randomValueY2;
+        private CellType clickType;
 
         /// <summary>
         /// The current click type
@@ -73,7 +73,7 @@ namespace Grid
             //Sets the row count to then, this will create a 10 by 10 grid.
             cellRowCount = 10;
 
-            CreateGrid(10,10);
+            CreateGrid(10, 10);
             //aStar = new Astar();
             //Console.WriteLine("{0}{1}{2}");
             randomValueX = rnd.Next(0, 9);
@@ -129,7 +129,7 @@ namespace Grid
         public void CreateGrid(int width, int height)
         {
             //Instantiates the list of cells
-            grid = new Cell[width,height];
+            grid = new Cell[width, height];
 
             //Sets the cell size
             int cellSize = displayRectangle.Width / cellRowCount;
@@ -139,7 +139,7 @@ namespace Grid
             {
                 for (int y = 0; y < grid.GetLength(1); y++)
                 {
-                    this[x,y] = new Cell(new Point(x, y), cellSize);
+                    this[x, y] = new Cell(new Point(x, y), cellSize);
                 }
             }
             CreateOpenList();
@@ -147,18 +147,29 @@ namespace Grid
 
         public void CalculateG(Cell input)
         {
-            for (int a = Grid[input.X, input.Y].X - 1; a < Grid[input.X, input.Y].X + 1 && a < Grid.GetUpperBound(0) && a > Grid.GetLowerBound(0); a++)
+            for (int a = Grid[input.Position.X, input.Position.Y].Position.X - 1; a <= Grid[input.Position.X, input.Position.Y].Position.X + 1; a++)
             {
-                for (int b = Grid[input.X, input.Y].Y - 1; b < Grid[input.X, input.Y].Y + 1 && b < Grid.GetUpperBound(1) && b > Grid.GetLowerBound(1); b++)
+                if (a < Grid.GetLowerBound(0))
+                    a++;
+                else if (a > Grid.GetUpperBound(0))
+                    break;
+                for (int b = Grid[input.Position.X, input.Position.Y].Position.Y - 1; b <= Grid[input.Position.X, input.Position.Y].Position.Y + 1; b++)
                 {
-                    if (a != Grid[input.X, input.Y].X && Grid[input.X, input.Y].Walkable || b != Grid[input.X, input.Y].Y && Grid[input.X, input.Y].Walkable)
+                    if (b < Grid.GetLowerBound(1))
+                        b++;
+                    else if (b > Grid.GetUpperBound(1))
+                    {
+                        break;
+                    }
+                        
+                    if (a != Grid[input.Position.X, input.Position.Y].Position.X || b != Grid[input.Position.X, input.Position.Y].Position.Y)
                     {
                         //Sees if nodes un-diagonal next to current node are walkable
-                        if (a == Grid[input.X, input.Y].X && b == Grid[input.X, input.Y].Y - 1 || a == Grid[input.X, input.Y].X - 1 && b == Grid[input.X, input.Y].Y
-                            || a == Grid[input.X, input.Y].X && b == Grid[input.X, input.Y].Y || a == Grid[input.X, input.Y].X + 1 && b == Grid[input.X, input.Y].Y)
+                        if (a == Grid[input.Position.X, input.Position.Y].Position.X && b == Grid[input.Position.X, input.Position.Y].Position.Y - 1 || a == Grid[input.Position.X, input.Position.Y].Position.X - 1 && b == Grid[input.Position.X, input.Position.Y].Position.Y
+                            || a == Grid[input.Position.X, input.Position.Y].Position.X && b == Grid[input.Position.X, input.Position.Y].Position.Y || a == Grid[input.Position.X, input.Position.Y].Position.X + 1 && b == Grid[input.Position.X, input.Position.Y].Position.Y)
                         {
                             Grid[a, b].G = 10; // Returns the linear value of 10 to the G-score of the current node
-                            if (!OpenList.Contains(Grid[a, b]))
+                            if (!OpenList.Contains(Grid[a, b]) && !ClosedList.Contains(Grid[a, b]))
                             {
                                 OpenList.Add(Grid[a, b]);
                             }
@@ -167,7 +178,7 @@ namespace Grid
                         else
                         {
                             Grid[a, b].G = 14;
-                            if (!OpenList.Contains(Grid[a, b]))
+                            if (!OpenList.Contains(Grid[a, b]) && !ClosedList.Contains(Grid[a, b]))
                             {
                                 OpenList.Add(Grid[a, b]);
                             }
@@ -178,55 +189,69 @@ namespace Grid
         }
 
         public void CalculateH(Cell endInput)
-        { 
-            //TODO: Find celltype of endInput, e.g.: Grid[x,y].myType -- (myType is CellType)
+        {
             int xConst = 0;
             int yConst = 0;
-            for (int a = Grid[endInput.X, endInput.Y].X - xConst; a > Grid.GetLowerBound(0); xConst++)
+            for (int a = Grid[endInput.Position.X, endInput.Position.Y].Position.X; a >= Grid.GetLowerBound(0); a--)
             {
-                for (int b = Grid[endInput.X, endInput.Y].Y - yConst; b > Grid.GetLowerBound(1); yConst++)
+                for (int b = Grid[endInput.Position.X, endInput.Position.Y].Position.Y; b >= Grid.GetLowerBound(1); b--)
                 {
-                    if (a != Grid[endInput.X, endInput.Y].X || b != Grid[endInput.X, endInput.Y].Y)
+                    if (a != Grid[endInput.Position.X, endInput.Position.Y].Position.X || b != Grid[endInput.Position.X, endInput.Position.Y].Position.Y)
                     {
                         Grid[a, b].H = 10 * (xConst + yConst);
                     }
+                    yConst++;
                 }
+                xConst++;
+                yConst = 0;
             }
             xConst = 0;
             yConst = 0;
-            for (int a = Grid[endInput.X, endInput.Y].X - xConst; a > Grid.GetLowerBound(0); xConst++)
+            for (int a = Grid[endInput.Position.X, endInput.Position.Y].Position.X; a >= Grid.GetLowerBound(0); a--)
             {
-                for (int b = Grid[endInput.X, endInput.Y].Y + yConst; b < Grid.GetUpperBound(1); yConst++)
+                for (int b = Grid[endInput.Position.X, endInput.Position.Y].Position.Y; b <= Grid.GetUpperBound(1); b++)
                 {
-                    if (a != Grid[endInput.X, endInput.Y].X || b != Grid[endInput.X, endInput.Y].Y)
+                    if (a != Grid[endInput.Position.X, endInput.Position.Y].Position.X || b != Grid[endInput.Position.X, endInput.Position.Y].Position.Y)
                     {
                         Grid[a, b].H = 10 * (xConst + yConst);
                     }
+                    yConst++;
+
                 }
+                xConst++;
+                yConst = 0;
+
             }
             xConst = 0;
             yConst = 0;
-            for (int a = Grid[endInput.X, endInput.Y].X + xConst; a > Grid.GetUpperBound(0); xConst++)
+            for (int a = Grid[endInput.Position.X, endInput.Position.Y].Position.X; a <= Grid.GetUpperBound(0); a++)
             {
-                for (int b = Grid[endInput.X, endInput.Y].Y - yConst; b > Grid.GetLowerBound(1); yConst++)
+                for (int b = Grid[endInput.Position.X, endInput.Position.Y].Position.Y; b >= Grid.GetLowerBound(1); b--)
                 {
-                    if (a != Grid[endInput.X, endInput.Y].X || b != Grid[endInput.X, endInput.Y].Y)
+                    if (a != Grid[endInput.Position.X, endInput.Position.Y].Position.X || b != Grid[endInput.Position.X, endInput.Position.Y].Position.Y)
                     {
                         Grid[a, b].H = 10 * (xConst + yConst);
                     }
+                    yConst++;
+
                 }
+                xConst++;
+                yConst = 0;
             }
             xConst = 0;
             yConst = 0;
-            for (int a = Grid[endInput.X, endInput.Y].X + xConst; a > Grid.GetUpperBound(0); xConst++)
+            for (int a = Grid[endInput.Position.X, endInput.Position.Y].Position.X; a <= Grid.GetUpperBound(0); a++)
             {
-                for (int b = Grid[endInput.X, endInput.Y].Y + yConst; b < Grid.GetUpperBound(1); yConst++)
+                for (int b = Grid[endInput.Position.X, endInput.Position.Y].Position.Y; b <= Grid.GetUpperBound(1); b++)
                 {
-                    if (a != Grid[endInput.X, endInput.Y].X || b != Grid[endInput.X, endInput.Y].Y)
+                    if (a != Grid[endInput.Position.X, endInput.Position.Y].Position.X || b != Grid[endInput.Position.X, endInput.Position.Y].Position.Y)
                     {
                         Grid[a, b].H = 10 * (xConst + yConst);
                     }
+                    yConst++;
                 }
+                xConst++;
+                yConst = 0;
             }
         }
 
@@ -236,64 +261,74 @@ namespace Grid
         public void CreateOpenList()
         {
             OpenList = new List<Cell>();
-            bool isSTART = Grid.GetType().IsEnum.Equals(CellType.START);
-            foreach (Cell cell in Grid)
-            {
-                if (cell.GetType().IsEnum == isSTART)
-                    OpenList.Add(cell); // puts start cell in the open list
-            }
+            //  bool isSTART = Grid.GetType().IsEnum.Equals(CellType.START);
+            //  foreach (Cell cell in Grid)
+            //{
+            //     if (cell.GetType().IsEnum == isSTART)
+            //          OpenList.Add(cell); // puts start cell in the open list
+            //}
 
             Console.WriteLine(OpenList);
             Console.Write(OpenList.Capacity); //Debug
         }
 
-
         public void CreateClosedList()
         {
             ClosedList = new List<Cell>();
-
         }
 
-        public Cell AStar(Cell start, Cell end)
+        public void AStar(Cell start, Cell end)
         {
-            Cell best = null;
+            Cell current = null;
             Cell parent = null;
             CreateClosedList();
+            Grid[start.Position.X, start.Position.Y].G = 0;
+            OpenList.Add(start);
             CalculateH(end);
-            Grid[start.X, start.Y].G = 0;
-            ClosedList.Add(start);
-            
-            parent = start;
-            while(OpenList.Count > 0)
+
+            while (OpenList.Count > 0) //When open list is not empty
             {
-                if(best == end)
-                {
-                    return GeneratePath(parent, best);
-                }
                 if (OpenList.Contains(start))
                 {
+                    current = start;
+                    ClosedList.Add(start);
                     OpenList.Remove(start);
                 }
-                
-                CalculateG(parent);
-                foreach (Cell cell in OpenList)
+
+                if (current == end)
                 {
-                    if (best == null || cell.F < best.F)
+                    GeneratePath(parent, current);
+                    OpenList.Clear();
+                    ClosedList.Clear();
+
+                    // for (int i = 0; i > 0; i++)
+
+                    break;
+                }
+
+                CalculateG(current); //Checks the neighboring cells of current cell
+                foreach (Cell cell in OpenList) //score of the nodes is calculated
+                {
+                    if (current == null || cell.F <= current.F)
                     {
-                        best = cell;
+                        current = cell;
                     }
                 }
-                ClosedList.Add(best);
-                OpenList.Remove(best);
-                parent = best;
+
+                OpenList.Remove(current);
+                ClosedList.Add(current);
+                parent = current;
             }
-            return null; //TODO: something
+
         }
 
-        public Cell GeneratePath(Cell parent, Cell best)
+        public void GeneratePath(Cell parent, Cell current)
         {
-            throw new NotImplementedException();//herpaderp
-            
+            SolidBrush b = new SolidBrush(Color.Red);
+            foreach (Cell cell in ClosedList)
+            {
+                cell.Sprite = Image.FromFile(@"Images\RedX.png");
+            }
         }
 
         /// <summary>
@@ -315,19 +350,19 @@ namespace Grid
             grid[6, 6].sprite = monster;
         }
 
-        ///// <summary>
-        ///// If the mouse clicks on a cell
-        ///// </summary>
-        ///// <param name="mousePos"></param>
-        //public void ClickCell(Point mousePos)
-        //{
-        //    foreach (Cell cell in grid) //Finds the cell that we just clicked
-        //    {
-        //        if (cell.BoundingRectangle.IntersectsWith(new Rectangle(mousePos, new Size(1, 1))))
-        //        {
-        //            cell.Click(ref clickType);
-        //        }
-        //    }
-        //}
+        /// <summary>
+        /// If the mouse clicks on a cell
+        /// </summary>
+        /// <param name="mousePos"></param>
+        public void ClickCell(Point mousePos)
+        {
+            foreach (Cell cell in grid) //Finds the cell that we just clicked
+            {
+                if (cell.BoundingRectangle.IntersectsWith(new Rectangle(mousePos, new Size(1, 1))))
+                {
+                    cell.Click(ref clickType);
+                }
+            }
+        }
     }
 }

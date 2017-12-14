@@ -36,7 +36,13 @@ namespace Grid
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             //Checks if we clicked a cell
+
+            visualManager.ClickCell(this.PointToClient(Cursor.Position));
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                visualManager.AStar(visualManager.Grid[1, 7], visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY]);
+
             //visualManager.ClickCell(this.PointToClient(Cursor.Position));
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
