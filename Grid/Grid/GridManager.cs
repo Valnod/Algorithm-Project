@@ -15,14 +15,16 @@ namespace Grid
         private Graphics dc;
         private Rectangle displayRectangle;
 
-        Image portal = Image.FromFile(@"Images\portalA.png"); //Portal
-        Image wizard = Image.FromFile(@"Images\wizardFront.png"); //Startobject
-        Image tower1 = Image.FromFile(@"Images\tower.png"); //Tower1
-        Image tower2 = Image.FromFile(@"Images\portalB.png"); //Endobject
-        Image key1 = Image.FromFile(@"Images\key.png"); //First key
-        Image key2 = Image.FromFile(@"Images\key.png"); //Second key
-        Image tree = Image.FromFile(@"Images\treeSingle.png"); //Tree
-        Image trees = Image.FromFile(@"Images\tree.png"); //Multible trees
+        Image wizard = Image.FromFile(@"Images\wizardFrontUpdate.png"); //Startobject
+        Image portal = Image.FromFile(@"Images\PortalUpdate.png"); //Portal
+        Image tower1 = Image.FromFile(@"Images\Tower1Update.png"); //Tower1
+        Image tower2 = Image.FromFile(@"Images\Tower2Update.png"); //Endobject
+        Image key1 = Image.FromFile(@"Images\Key1Update.png"); //First key
+        Image key2 = Image.FromFile(@"Images\Key2Update.png"); //Second key
+        Image tree = Image.FromFile(@"Images\TreeUpdate.png"); //Tree
+        Image trees = Image.FromFile(@"Images\TreesUpdate.png"); //Multible trees
+        Image wall = Image.FromFile(@"Images\WallUpdate.png"); //Wall
+        Image path = Image.FromFile(@"Images\PathUpdate.png"); //Path
 
         public List<Cell> ClosedList { get; set; }
         public List<Cell> OpenList { get; set; }
@@ -41,8 +43,9 @@ namespace Grid
 
         Random rnd = new Random();
         int randomValueX;
-        int randomValue1;
-        int randomValue2;
+        int randomValueY;
+        int randomValueX2;
+        int randomValueY2;
 
         /// <summary>
         /// The current click type
@@ -72,9 +75,10 @@ namespace Grid
             CreateGrid(10,10);
             //aStar = new Astar();
             //Console.WriteLine("{0}{1}{2}");
-            randomValueX = rnd.Next(0, 9);
-            randomValue1 = rnd.Next(0, 1);
-            randomValue2 = rnd.Next(3, 4);
+            randomValueX = rnd.Next(0, 2);
+            randomValueY = rnd.Next(0, 1);
+            randomValueX2 = rnd.Next(6, 9);
+            randomValueY2 = rnd.Next(2, 4);
         }
 
         public Cell this[int x, int y]
@@ -286,14 +290,18 @@ namespace Grid
         /// <param name="mousePos"></param>
         public void SpriteCell()
         {
-            grid[1, 7].sprite = portal;
-            grid[2, 7].sprite = wizard;
+            grid[1, 7].sprite = wizard;
+            grid[0, 7].sprite = portal;
             grid[2, 2].sprite = tower1;
             grid[8, 5].sprite = tower2;
-            grid[randomValueX, randomValue1].sprite = key1;
-            grid[randomValueX, randomValue2].sprite = key2;
-            grid[4, 5].sprite = trees;
-            grid[5, 5].sprite = trees;
+            grid[randomValueX, randomValueY].sprite = key1;
+            grid[randomValueX2, randomValueY2].sprite = key2;
+            grid[3, 5].sprite = trees; grid[4, 5].sprite = trees; grid[5, 5].sprite = trees; grid[6, 5].sprite = trees;
+            grid[3, 7].sprite = trees; grid[4, 7].sprite = trees; grid[5, 7].sprite = trees; grid[6, 7].sprite = trees;
+            grid[4, 4].sprite = wall; grid[4, 3].sprite = wall; grid[4, 2].sprite = wall; grid[4, 1].sprite = wall;
+            grid[5, 4].sprite = wall; grid[5, 3].sprite = wall; grid[5, 2].sprite = wall; grid[5, 1].sprite = wall;
+            grid[2, 6].sprite = path; grid[3, 6].sprite = path; grid[4, 6].sprite = path; grid[5, 6].sprite = path; grid[6, 6].sprite = path; grid[7, 6].sprite = path;
+            grid[2, 5].sprite = path; grid[7, 5].sprite = path; grid[2, 4].sprite = path; grid[3, 4].sprite = path; grid[6, 4].sprite = path; grid[7, 4].sprite = path;
 
             //grid[2, 6].Click(ref clickType); //Wizard
             //grid[2, 3].Click(ref clickType); //Tower1

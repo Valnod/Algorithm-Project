@@ -101,3 +101,13 @@ C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csproj.Gen
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\key2.png
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\tree.png
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\groundTileUpdate.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\wizardFrontUpdate.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Key1Update.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Key2Update.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\PortalUpdate.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Tower1Update.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Tower2Update.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\TreesUpdate.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\TreeUpdate.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\WallUpdate.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\PathUpdate.png

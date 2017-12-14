@@ -97,7 +97,7 @@ namespace Grid
             {
                 dc.DrawImage(sprite, BoundingRectangle);
             }
-
+            
             //Write's the cells grid position
             dc.DrawString(string.Format("{0}", position), new Font("Arial", 7, FontStyle.Regular), new SolidBrush(Color.Black), position.X * cellSize, (position.Y * cellSize) + 10);
         }
