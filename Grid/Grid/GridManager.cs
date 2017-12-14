@@ -305,7 +305,7 @@ namespace Grid
             grid[1, 7].sprite = wizard;
             grid[0, 7].sprite = portal;
             grid[2, 2].sprite = tower1;
-            grid[9, 5].sprite = tower2;
+            grid[8, 5].sprite = tower2;
             grid[randomValueX, randomValueY].sprite = key1;
             grid[randomValueX2, randomValueY2].sprite = key2;
             grid[2, 5].sprite = trees; grid[3, 5].sprite = trees; grid[4, 5].sprite = trees; grid[5, 5].sprite = trees; grid[6, 5].sprite = trees; grid[7, 5].sprite = trees;
