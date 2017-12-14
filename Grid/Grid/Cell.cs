@@ -8,7 +8,7 @@ using static Grid.CellType;
 
 namespace Grid
 {
-    public enum CellType { START, GOAL, WALL, EMPTY, TOWER1, TOWER2, KEY1, KEY2 };
+    public enum CellType { START, TOWER1, TOWER2, KEY1, KEY2, WALL, EMPTY };
 
     public class Cell
     {
@@ -37,14 +37,17 @@ namespace Grid
         /// <summary>
         /// The cell's sprite
         /// </summary>
-        private Image sprite;
+        public Image sprite;
+
+        private Image grasTile = Image.FromFile(@"Images\groundTileUpdate.png"); //Default
+        private Image pathTile = Image.FromFile(@"Images\PathUpdate.png"); //Path
 
         public Image Sprite { get { return sprite; } set { sprite = value; } }
 
         /// <summary>
         /// Sets the celltype to empty as default
         /// </summary>
-        CellType myType = EMPTY;
+        public CellType myType = EMPTY;
         private int wallCount;
 
         //TODO: Maybe make myType as property so A* can check it
@@ -85,6 +88,32 @@ namespace Grid
             //Draws the rectangles color
             dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
 
+            dc.DrawImage(grasTile, BoundingRectangle); //Need to resize
+
+            //Draws the rectangles border
+            dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);
+
+            //If the cell has a sprite, then we need to draw it
+            if (sprite != null)
+            {
+                dc.DrawImage(sprite, BoundingRectangle);
+            }
+            
+            //Write's the cells grid position
+            dc.DrawString(string.Format("{0}", position), new Font("Arial", 7, FontStyle.Regular), new SolidBrush(Color.Black), position.X * cellSize, (position.Y * cellSize) + 10);
+        }
+
+        /// <summary>
+        /// Renders the cell
+        /// </summary>
+        /// <param name="dc">The graphic context</param>
+        public void Render2(Graphics dc)
+        {
+            //Draws the rectangles color
+            dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
+
+            dc.DrawImage(pathTile, BoundingRectangle); //Need to resize
+
             //Draws the rectangles border
             dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);
 
@@ -107,31 +136,33 @@ namespace Grid
             wallCount += 1;
             if (clickType == START) //If the click type is START
             {
-                sprite = Image.FromFile(@"Images\Start.png");
+                sprite = Image.FromFile(@"Images\wizardFront.png");
                 myType = clickType;
-                clickType = GOAL;
+                clickType = TOWER1;
             }
-            else if (clickType == GOAL && myType != START) //If the click type is GOAL
+            else if (clickType == TOWER1 && myType != START) //If the click type is GOAL
             {
-                sprite = Image.FromFile(@"Images\Goal.png");
-                clickType = WALL;
-                myType = GOAL;
+                sprite = Image.FromFile(@"Images\tower.png");
+                myType = TOWER1;
+                clickType = TOWER2;
             }
-            else if (clickType == WALL && myType != START && myType != GOAL && myType != WALL) //If the click type is WALL
+            else if (clickType == TOWER2 && myType != START && myType != TOWER1 && myType != TOWER2) //If the click type is WALL
             {
+                sprite = Image.FromFile(@"Images\portalB.png");
+                myType = TOWER2;
                 clickType = KEY1;
-                sprite = Image.FromFile(@"Images\Wall.png");
-                myType = WALL;
             }
-            else if (clickType == WALL && myType == WALL) //If the click type is WALL
-            { 
-                sprite = null;
-                myType = EMPTY;
-            }
-            else if (clickType == KEY1)
+            else if (clickType == KEY1 && myType != START && myType != TOWER1 && myType != TOWER2 && myType != KEY1)
             {
                 sprite = Image.FromFile(@"Images\key.png");
+                myType = KEY1;
+                clickType = KEY2;
             }
+            //else if (clickType == WALL && myType == WALL) //If the click type is WALL
+            //{ 
+            //    sprite = null;
+            //    myType = EMPTY;
+            //}
         }
     }
 }

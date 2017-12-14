@@ -1,106 +1,32 @@
-C:\Users\Kenneth\Desktop\Grid\Grid\bin\Debug\Grid.exe.config
-C:\Users\Kenneth\Desktop\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
-C:\Users\Kenneth\Desktop\Grid\Grid\obj\Debug\Grid.Form1.resources
-C:\Users\Kenneth\Desktop\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
-C:\Users\Kenneth\Desktop\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
-C:\Users\Kenneth\Desktop\Grid\Grid\bin\Debug\Grid.exe
-C:\Users\Kenneth\Desktop\Grid\Grid\bin\Debug\Grid.pdb
-C:\Users\Kenneth\Desktop\Grid\Grid\obj\Debug\Grid.exe
-C:\Users\Kenneth\Desktop\Grid\Grid\obj\Debug\Grid.pdb
-C:\Users\Kenneth\Desktop\Grid\Grid\bin\Debug\Images\Wall.png
-C:\Users\Kenneth\Desktop\Grid\Grid\bin\Debug\Images\Goal.png
-C:\Users\Kenneth\Desktop\Grid\Grid\bin\Debug\Images\Start.png
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\bin\Debug\Images\Wall.png
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\bin\Debug\Images\Goal.png
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\bin\Debug\Images\Start.png
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\bin\Debug\Grid.exe.config
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\bin\Debug\Grid.exe
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\bin\Debug\Grid.pdb
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.Form1.resources
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.exe
-E:\CloudStation\Programming\C#\Algoritmer\Grid\Grid\obj\Debug\Grid.pdb
-C:\Users\AsbjørnSand\Dropbox\Dokumenter\Dania 2015-2017\Algoritmer\Grid\Grid\bin\Debug\Grid.exe.config
-C:\Users\AsbjørnSand\Dropbox\Dokumenter\Dania 2015-2017\Algoritmer\Grid\Grid\obj\Debug\Grid.exe
-C:\Users\AsbjørnSand\Dropbox\Dokumenter\Dania 2015-2017\Algoritmer\Grid\Grid\obj\Debug\Grid.pdb
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\bin\Debug\Images\Wall.png
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\bin\Debug\Images\Goal.png
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\bin\Debug\Images\Start.png
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\bin\Debug\Grid.exe.config
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\bin\Debug\Grid.exe
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\bin\Debug\Grid.pdb
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.Form1.resources
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.csproj.CoreCompileInputs.cache
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.exe
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.pdb
-C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe.config
-D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.Form1.resources
-D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
-D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\Wall.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\Goal.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\Start.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Grid.pdb
-D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.exe
-D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.pdb
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Grid.exe.config
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.exe
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.pdb
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\groundSingleTile.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\key.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\oneEyeMonster.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\path.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\portalA.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\portalB.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\redMonster.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\threeEyeMonster.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\tower.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\treeSingle.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Wall.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Goal.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Start.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\wallSingleTile.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\wizardFront.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Grid.exe
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Grid.pdb
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Form1.resources
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\groundSingleTile.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\key.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\oneEyeMonster.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\path.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\portalA.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\portalB.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\redMonster.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\threeEyeMonster.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\tower.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\treeSingle.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\wallSingleTile.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\wizardFront.png
-D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\groundSingleTile.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\groundTileUpdate.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\key.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Key1Update.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\key2.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Key2Update.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\oneEyeMonster.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\path.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\PathUpdate.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\portalA.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\portalB.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\PortalUpdate.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\redMonster.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\threeEyeMonster.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\threeEyeUpdate.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\tower.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Tower1Update.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Tower2Update.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\tree.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\treeSingle.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\TreesUpdate.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\TreeUpdate.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Wall.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Goal.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\Start.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\wallSingleTile.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\WallUpdate.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\wizardFront.png
+C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\wizardFrontUpdate.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe.config
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Grid.pdb
