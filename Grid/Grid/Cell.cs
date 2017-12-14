@@ -39,6 +39,8 @@ namespace Grid
         /// </summary>
         private Image sprite;
 
+        public Image Sprite { get { return sprite; } set { sprite = value; } }
+
         /// <summary>
         /// Sets the celltype to empty as default
         /// </summary>
