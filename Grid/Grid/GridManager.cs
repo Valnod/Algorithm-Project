@@ -39,14 +39,17 @@ namespace Grid
         /// This list contains all cells and open list
         /// </summary>
         private Cell[,] grid;
-       
+
 
         Random rnd = new Random();
-        int randomValueX;
-        int randomValueY;
+        public int randomValueX;
+        public int randomValueY;
         int randomValueX2;
         int randomValueY2;
         private CellType clickType;
+        private bool unwalkablePathOne;
+        private bool unwalkablePathTwo;
+        private bool unwalkablePathThree;
 
         /// <summary>
         /// The current click type
@@ -161,8 +164,8 @@ namespace Grid
                     {
                         break;
                     }
-                        
-                    if (a != Grid[input.Position.X, input.Position.Y].Position.X || b != Grid[input.Position.X, input.Position.Y].Position.Y)
+
+                    if ((a != Grid[input.Position.X, input.Position.Y].Position.X || b != Grid[input.Position.X, input.Position.Y].Position.Y) && Grid[a, b].Walkable)
                     {
                         //Sees if nodes un-diagonal next to current node are walkable
                         if (a == Grid[input.Position.X, input.Position.Y].Position.X && b == Grid[input.Position.X, input.Position.Y].Position.Y - 1 || a == Grid[input.Position.X, input.Position.Y].Position.X - 1 && b == Grid[input.Position.X, input.Position.Y].Position.Y
@@ -314,12 +317,52 @@ namespace Grid
                         current = cell;
                     }
                 }
-
+                if (current == parent)
+                {
+                    bool swapped;
+                    do
+                    {
+                        swapped = false;
+                        for (int i = 1; i < OpenList.Count; i++)
+                        {
+                            if (OpenList[i - 1].F > OpenList[i].F)
+                            {
+                                Cell temp = OpenList[i - 1];
+                                OpenList[i - 1] = OpenList[i];
+                                OpenList[i] = temp;
+                                swapped = true;
+                            }
+                        }
+                    } while (swapped);
+                    current = OpenList[0];
+                    
+                    
+                }
+                if (current.Position.X == 2 && current.Position.Y == 6)
+                {
+                    unwalkablePathOne = true;
+                }
+                if (current.Position.X == 5 && current.Position.Y == 6)
+                {
+                    unwalkablePathTwo = true;
+                }
+                if (current.Position.X == 7 && current.Position.Y == 6)
+                {
+                    unwalkablePathThree = true;
+                }
                 OpenList.Remove(current);
                 ClosedList.Add(current);
                 parent = current;
-            }
 
+                if (unwalkablePathOne && unwalkablePathThree && unwalkablePathTwo)
+                {
+                    for (int i = 2; i <= 7; i++)
+                    {
+                        Grid[i, 6].Walkable = false;
+                    }
+                    grid[6, 6].sprite = monster;
+                }
+            }
         }
 
         public void GeneratePath(Cell parent, Cell current)
@@ -327,7 +370,7 @@ namespace Grid
             SolidBrush b = new SolidBrush(Color.Red);
             foreach (Cell cell in ClosedList)
             {
-                cell.Sprite = Image.FromFile(@"Images\tower.png");
+               cell.Sprite = Image.FromFile(@"Images\tower.png");
             }
         }
 
@@ -347,7 +390,13 @@ namespace Grid
             grid[2, 7].sprite = trees; grid[3, 7].sprite = trees; grid[4, 7].sprite = trees; grid[5, 7].sprite = trees; grid[6, 7].sprite = trees; grid[7, 7].sprite = trees;
             grid[4, 4].sprite = wall; grid[4, 3].sprite = wall; grid[4, 2].sprite = wall; grid[4, 1].sprite = wall;
             grid[5, 4].sprite = wall; grid[5, 3].sprite = wall; grid[5, 2].sprite = wall; grid[5, 1].sprite = wall;
-            grid[6, 6].sprite = monster;
+            // grid[6, 6].sprite = monster;
+
+            foreach (Cell cell in Grid)
+            {
+                if (cell.Sprite == wall || cell.Sprite == tree || cell.Sprite == trees)
+                    cell.Walkable = false;
+            }
         }
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace Grid
         }
         public int G { get; set; }
         public int H { get; set; }
-        public bool Walkable { get; set; }
+        public bool Walkable { get; set; } = true;
         
 
         /// <summary>
