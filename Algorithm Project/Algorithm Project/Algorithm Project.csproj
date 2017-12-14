@@ -40,6 +40,10 @@
   <ItemGroup>
     <Compile Include="Astar.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="ComponentPattern\Component.cs" />
+    <Compile Include="ComponentPattern\Transform.cs" />
+    <Compile Include="GameWorld.cs" />
+    <Compile Include="GameObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
