@@ -33,7 +33,7 @@ namespace Grid
         public List<Cell> OpenList { get; set; }
 
         /// <summary>
-        /// Amount of rows in the grid
+        /// Amount of rows in the grid. Credit: Palle
         /// </summary>
         private int cellRowCount;
 
@@ -87,6 +87,12 @@ namespace Grid
             randomValueY2 = rnd.Next(1, 4);
         }
 
+        /// <summary>
+        /// Indexer for cells in grid.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public Cell this[int x, int y]
         {
             get
@@ -102,7 +108,7 @@ namespace Grid
         }
 
         /// <summary>
-        /// Renders all the cells
+        /// Renders all the cells with sprites
         /// </summary>
         public void Render()
         {
@@ -129,7 +135,7 @@ namespace Grid
         }
 
         /// <summary>
-        /// Creates the grid
+        /// Creates the grid. Modified by Joakim. Originally by Palle
         /// </summary>
         public void CreateGrid(int width, int height)
         {
@@ -152,17 +158,19 @@ namespace Grid
         }
 
         /// <summary>
-        /// Calculates the G score, checking for neighbouring cells to an input cell, to calculate the quickest route
+        /// Calculates the G score, checking for neighbouring cells to an input cell to calculate the quickest route. Made by Joakim.
         /// </summary>
         /// <param name="input">The cell input of the current destination in the path</param>
         public void CalculateG(Cell input)
         {
+            //Checks all the x row neighbors. If it crosses the lower or upper bound, it skips to the next x value or resets to the next x value.
             for (int a = Grid[input.Position.X, input.Position.Y].Position.X - 1; a <= Grid[input.Position.X, input.Position.Y].Position.X + 1; a++)
             {
                 if (a < Grid.GetLowerBound(0))
                     a++;
                 else if (a > Grid.GetUpperBound(0))
                     break;
+                //Checks all the y collumn neighbors. It resets if it exceeds upper bound and skips to next y if it is lower than lower bound.
                 for (int b = Grid[input.Position.X, input.Position.Y].Position.Y - 1; b <= Grid[input.Position.X, input.Position.Y].Position.Y + 1; b++)
                 {
                     if (b < Grid.GetLowerBound(1))
@@ -172,6 +180,7 @@ namespace Grid
                         break;
                     }
 
+                    //Makes sure it doesn't assign a G value to the input cell itself.
                     if ((a != Grid[input.Position.X, input.Position.Y].Position.X || b != Grid[input.Position.X, input.Position.Y].Position.Y) && Grid[a, b].Walkable)
                     {
                         //Sees if nodes un-diagonal next to current node are walkable
@@ -199,7 +208,8 @@ namespace Grid
         }
 
         /// <summary>
-        /// Calculates the Heuristic score which estimates the shortest likely route to destination
+        /// Calculates the Heuristic score which estimates the shortest likely route to destination. Made by Joakim
+        /// 4 nested for-loops checks all directions for which to calculate H.
         /// </summary>
         /// <param name="endInput">The cell of the end-destination</param>
         public void CalculateH(Cell endInput)
@@ -210,8 +220,10 @@ namespace Grid
             {
                 for (int b = Grid[endInput.Position.X, endInput.Position.Y].Position.Y; b >= Grid.GetLowerBound(1); b--)
                 {
+                    //Doesn't add an H value to itself.
                     if (a != Grid[endInput.Position.X, endInput.Position.Y].Position.X || b != Grid[endInput.Position.X, endInput.Position.Y].Position.Y)
                     {
+                        //The distance from the end-cell multiplied by 10
                         Grid[a, b].H = 10 * (xConst + yConst);
                     }
                     yConst++;
@@ -286,6 +298,9 @@ namespace Grid
             Console.Write(OpenList.Capacity); //Debug
         }
 
+        /// <summary>
+        /// Creates the closed list. Adds cells from the open list.
+        /// </summary>
         public void CreateClosedList()
         {
             ClosedList = new List<Cell>();
@@ -305,16 +320,16 @@ namespace Grid
             OpenList.Add(start);
             CalculateH(end);
 
-            while (OpenList.Count > 0) //When open list is not empty
+            while (OpenList.Count > 0) //While open list is not empty
             {
-                if (OpenList.Contains(start))
+                if (OpenList.Contains(start)) //Performed only when the openlist contains start. Made to keep the while loop alive in the beginning
                 {
                     current = start;
                     ClosedList.Add(start);
                     OpenList.Remove(start);
                 }
 
-                if (current == end)
+                if (current == end) // If it reaches the end, generate the path and reset all values
                 {
                     GeneratePath(parent, current);
                     OpenList.Clear();
@@ -338,7 +353,7 @@ namespace Grid
                         current = cell;
                     }
                 }
-                if (current == parent)
+                if (current == parent) //If current doesn't find something with a smaller value than itself, it finds the smallest among the open list with Bubble sort.
                 {
                     bool swapped;
                     do
@@ -359,6 +374,7 @@ namespace Grid
 
 
                 }
+                //Used to lock off the forbidden forest if these coordinates are visited.
                 if (current.Position.X == 2 && current.Position.Y == 6)
                 {
                     unwalkablePathOne = true;
@@ -375,6 +391,7 @@ namespace Grid
                 ClosedList.Add(current);
                 parent = current;
 
+                //Forbidden forest is permanently locked off during runtime.
                 if (unwalkablePathOne && unwalkablePathThree && unwalkablePathTwo)
                 {
                     for (int i = 2; i <= 7; i++)
@@ -386,7 +403,12 @@ namespace Grid
             }
         }
 
-        public void GeneratePath(Cell parent, Cell current) //Draws the path that's been found from the closed list
+        /// <summary>
+        /// Draws the path that's been found from the closed list
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="current"></param>
+        public void GeneratePath(Cell parent, Cell current)
         {
            // List<Cell> oldCell = new List<Cell>(); : for use if we want to clear previous cell.
             SolidBrush b = new SolidBrush(Color.Red);
@@ -398,7 +420,7 @@ namespace Grid
         }
 
         /// <summary>
-        /// Create objects
+        /// Create objects. Made by Daniel.
         /// </summary>
         /// <param name="mousePos"></param>
         public void SpriteCell()
@@ -423,7 +445,7 @@ namespace Grid
         }
 
         /// <summary>
-        /// If the mouse clicks on a cell
+        /// If the mouse clicks on a cell. Not in use
         /// </summary>
         /// <param name="mousePos"></param>
         public void ClickCell(Point mousePos)
