@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/wizardFront.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/groundSingleTile.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/groundTiles.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/key.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/oneEyeMonster.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/path.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/portalA.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/portalB.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/redMonster.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/threeEyeMonster.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/tower.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/tree.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/treeSingle.png</File>
+    <File>C:/Users/Windows/Documents/Algorithm Project/Algorithm Project/Algorithm Project/Content/wallSingleTile.png</File>
+  </SourceFiles>
+</SourceFileCollection>

@@ -1,0 +1,39 @@
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\groundSingleTile.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\groundTiles.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\key.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\oneEyeMonster.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\path.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\portalA.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\portalB.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\redMonster.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\threeEyeMonster.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\tower.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\tree.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\treeSingle.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\wallSingleTile.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Content\wizardFront.xnb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Algorithm Project.exe
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\Algorithm Project.pdb
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\obj\x86\Debug\Algorithm Project.csprojResolveAssemblyReference.cache
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\obj\x86\Debug\Algorithm Project.exe
+C:\Users\Windows\Documents\Algorithm Project\Algorithm Project\Algorithm Project\obj\x86\Debug\Algorithm Project.pdb
