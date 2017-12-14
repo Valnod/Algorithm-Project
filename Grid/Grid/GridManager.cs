@@ -25,6 +25,7 @@ namespace Grid
         Image trees = Image.FromFile(@"Images\TreesUpdate.png"); //Multible trees
         Image wall = Image.FromFile(@"Images\WallUpdate.png"); //Wall
         Image path = Image.FromFile(@"Images\PathUpdate.png"); //Path
+        Image monster = Image.FromFile(@"Images\threeEyeUpdate.png"); //Monster
 
         public List<Cell> ClosedList { get; set; }
         public List<Cell> OpenList { get; set; }
@@ -75,10 +76,10 @@ namespace Grid
             CreateGrid(10,10);
             //aStar = new Astar();
             //Console.WriteLine("{0}{1}{2}");
-            randomValueX = rnd.Next(0, 2);
-            randomValueY = rnd.Next(0, 1);
+            randomValueX = rnd.Next(0, 9);
+            randomValueY = rnd.Next(0);
             randomValueX2 = rnd.Next(6, 9);
-            randomValueY2 = rnd.Next(2, 4);
+            randomValueY2 = rnd.Next(1, 4);
         }
 
         public Cell this[int x, int y]
@@ -102,10 +103,21 @@ namespace Grid
         {
             dc.Clear(Color.White);
 
-            foreach (Cell cell in grid)
-            {
-                cell.Render(dc);
-            }
+            grid[0, 0].Render(dc); grid[0, 1].Render(dc); grid[0, 2].Render(dc); grid[0, 3].Render(dc); grid[0, 4].Render(dc); grid[0, 5].Render(dc); grid[0, 6].Render(dc); grid[0, 7].Render(dc);
+            grid[1, 0].Render(dc); grid[1, 1].Render(dc); grid[1, 2].Render(dc); grid[1, 3].Render2(dc); grid[1, 4].Render2(dc); grid[1, 5].Render2(dc); grid[1, 6].Render2(dc); grid[1, 7].Render(dc);
+            grid[2, 0].Render(dc); grid[2, 1].Render(dc); grid[2, 2].Render(dc); grid[2, 3].Render2(dc); grid[2, 4].Render(dc); grid[2, 5].Render(dc); grid[2, 6].Render2(dc); grid[2, 7].Render(dc);
+            grid[3, 0].Render2(dc); grid[3, 1].Render2(dc); grid[3, 2].Render2(dc); grid[3, 3].Render2(dc); grid[3, 4].Render(dc); grid[3, 5].Render(dc); grid[3, 6].Render2(dc); grid[3, 7].Render(dc);
+            grid[4, 0].Render2(dc); grid[4, 1].Render2(dc); grid[4, 2].Render2(dc); grid[4, 3].Render2(dc); grid[4, 4].Render2(dc); grid[4, 5].Render(dc); grid[4, 6].Render2(dc); grid[4, 7].Render(dc);
+            grid[5, 0].Render2(dc); grid[5, 1].Render2(dc); grid[5, 2].Render2(dc); grid[5, 3].Render2(dc); grid[5, 4].Render2(dc); grid[5, 5].Render(dc); grid[5, 6].Render2(dc); grid[5, 7].Render(dc);
+            grid[6, 0].Render2(dc); grid[6, 1].Render2(dc); grid[6, 2].Render2(dc); grid[6, 3].Render2(dc); grid[6, 4].Render(dc); grid[6, 5].Render(dc); grid[6, 6].Render2(dc); grid[6, 7].Render(dc);
+            grid[7, 0].Render(dc); grid[7, 1].Render(dc); grid[7, 2].Render(dc); grid[7, 3].Render2(dc); grid[7, 4].Render(dc); grid[7, 5].Render(dc); grid[7, 6].Render2(dc); grid[7, 7].Render(dc);
+            grid[8, 0].Render(dc); grid[8, 1].Render(dc); grid[8, 2].Render(dc); grid[8, 3].Render2(dc); grid[8, 4].Render2(dc); grid[8, 5].Render2(dc); grid[8, 6].Render2(dc); grid[8, 7].Render(dc);
+            grid[9, 0].Render(dc); grid[9, 1].Render(dc); grid[9, 2].Render(dc); grid[9, 3].Render(dc); grid[9, 4].Render(dc); grid[9, 5].Render(dc); grid[9, 6].Render(dc); grid[9, 7].Render(dc);
+
+            //foreach (Cell cell in grid)
+            //{
+            //    cell.Render(dc);
+            //}
 
             //Renders the content of the buffered graphics context to the real context(Swap buffers)
             backBuffer.Render();
@@ -293,19 +305,14 @@ namespace Grid
             grid[1, 7].sprite = wizard;
             grid[0, 7].sprite = portal;
             grid[2, 2].sprite = tower1;
-            grid[8, 5].sprite = tower2;
+            grid[9, 5].sprite = tower2;
             grid[randomValueX, randomValueY].sprite = key1;
             grid[randomValueX2, randomValueY2].sprite = key2;
-            grid[3, 5].sprite = trees; grid[4, 5].sprite = trees; grid[5, 5].sprite = trees; grid[6, 5].sprite = trees;
-            grid[3, 7].sprite = trees; grid[4, 7].sprite = trees; grid[5, 7].sprite = trees; grid[6, 7].sprite = trees;
+            grid[2, 5].sprite = trees; grid[3, 5].sprite = trees; grid[4, 5].sprite = trees; grid[5, 5].sprite = trees; grid[6, 5].sprite = trees; grid[7, 5].sprite = trees;
+            grid[2, 7].sprite = trees; grid[3, 7].sprite = trees; grid[4, 7].sprite = trees; grid[5, 7].sprite = trees; grid[6, 7].sprite = trees; grid[7, 7].sprite = trees;
             grid[4, 4].sprite = wall; grid[4, 3].sprite = wall; grid[4, 2].sprite = wall; grid[4, 1].sprite = wall;
             grid[5, 4].sprite = wall; grid[5, 3].sprite = wall; grid[5, 2].sprite = wall; grid[5, 1].sprite = wall;
-            grid[2, 6].sprite = path; grid[3, 6].sprite = path; grid[4, 6].sprite = path; grid[5, 6].sprite = path; grid[6, 6].sprite = path; grid[7, 6].sprite = path;
-            grid[2, 5].sprite = path; grid[7, 5].sprite = path; grid[2, 4].sprite = path; grid[3, 4].sprite = path; grid[6, 4].sprite = path; grid[7, 4].sprite = path;
-
-            //grid[2, 6].Click(ref clickType); //Wizard
-            //grid[2, 3].Click(ref clickType); //Tower1
-            //grid[rnd.Next(0, 10), rnd.Next(0, 10)].Click(ref clickType);
+            grid[6, 6].sprite = monster;
         }
 
         ///// <summary>

@@ -41,7 +41,8 @@ namespace Grid
         /// </summary>
         public Image sprite;
 
-        private Image tiles = Image.FromFile(@"Images\groundTileUpdate.png");
+        private Image grasTile = Image.FromFile(@"Images\groundTileUpdate.png"); //Default
+        private Image pathTile = Image.FromFile(@"Images\PathUpdate.png"); //Path
 
         /// <summary>
         /// Sets the celltype to empty as default
@@ -87,7 +88,7 @@ namespace Grid
             //Draws the rectangles color
             dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
 
-            dc.DrawImage(tiles, BoundingRectangle); //Need to resize
+            dc.DrawImage(grasTile, BoundingRectangle); //Need to resize
 
             //Draws the rectangles border
             dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);
@@ -98,6 +99,30 @@ namespace Grid
                 dc.DrawImage(sprite, BoundingRectangle);
             }
             
+            //Write's the cells grid position
+            dc.DrawString(string.Format("{0}", position), new Font("Arial", 7, FontStyle.Regular), new SolidBrush(Color.Black), position.X * cellSize, (position.Y * cellSize) + 10);
+        }
+
+        /// <summary>
+        /// Renders the cell
+        /// </summary>
+        /// <param name="dc">The graphic context</param>
+        public void Render2(Graphics dc)
+        {
+            //Draws the rectangles color
+            dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
+
+            dc.DrawImage(pathTile, BoundingRectangle); //Need to resize
+
+            //Draws the rectangles border
+            dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);
+
+            //If the cell has a sprite, then we need to draw it
+            if (sprite != null)
+            {
+                dc.DrawImage(sprite, BoundingRectangle);
+            }
+
             //Write's the cells grid position
             dc.DrawString(string.Format("{0}", position), new Font("Arial", 7, FontStyle.Regular), new SolidBrush(Color.Black), position.X * cellSize, (position.Y * cellSize) + 10);
         }
