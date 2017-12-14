@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,9 @@ namespace Grid
         private BufferedGraphics backBuffer;
         private Graphics dc;
         private Rectangle displayRectangle;
+        private Stopwatch sw = new Stopwatch();
 
-        Image wizard = Image.FromFile(@"Images\wizardFrontUpdate.png"); //Startobject
+        public Image wizard = Image.FromFile(@"Images\wizardFrontUpdate.png"); //Startobject
         Image portal = Image.FromFile(@"Images\PortalUpdate.png"); //Portal
         Image tower1 = Image.FromFile(@"Images\Tower1Update.png"); //Tower1
         Image tower2 = Image.FromFile(@"Images\Tower2Update.png"); //Endobject
@@ -39,7 +41,7 @@ namespace Grid
         /// This list contains all cells and open list
         /// </summary>
         private Cell[,] grid;
-       
+
 
         Random rnd = new Random();
         public int randomValueX;
@@ -143,6 +145,7 @@ namespace Grid
                 }
             }
             CreateOpenList();
+            CreateClosedList();
         }
 
         public void CalculateG(Cell input)
@@ -161,7 +164,7 @@ namespace Grid
                     {
                         break;
                     }
-                        
+
                     if (a != Grid[input.Position.X, input.Position.Y].Position.X || b != Grid[input.Position.X, input.Position.Y].Position.Y)
                     {
                         //Sees if nodes un-diagonal next to current node are walkable
@@ -281,7 +284,7 @@ namespace Grid
         {
             Cell current = null;
             Cell parent = null;
-            CreateClosedList();
+        
             Grid[start.Position.X, start.Position.Y].G = 0;
             OpenList.Add(start);
             CalculateH(end);
@@ -327,7 +330,7 @@ namespace Grid
             SolidBrush b = new SolidBrush(Color.Red);
             foreach (Cell cell in ClosedList)
             {
-                cell.Sprite = Image.FromFile(@"Images\RedX.png");
+                cell.sprite = Image.FromFile(@"Images\RedX.png");
             }
         }
 
