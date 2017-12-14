@@ -151,6 +151,10 @@ namespace Grid
             CreateClosedList();
         }
 
+        /// <summary>
+        /// Calculates the G score, checking for neighbouring cells to an input cell, to calculate the quickest route
+        /// </summary>
+        /// <param name="input">The cell input of the current destination in the path</param>
         public void CalculateG(Cell input)
         {
             for (int a = Grid[input.Position.X, input.Position.Y].Position.X - 1; a <= Grid[input.Position.X, input.Position.Y].Position.X + 1; a++)
@@ -194,6 +198,10 @@ namespace Grid
             }
         }
 
+        /// <summary>
+        /// Calculates the Heuristic score which estimates the shortest likely route to destination
+        /// </summary>
+        /// <param name="endInput">The cell of the end-destination</param>
         public void CalculateH(Cell endInput)
         {
             int xConst = 0;
@@ -283,11 +291,16 @@ namespace Grid
             ClosedList = new List<Cell>();
         }
 
+        /// <summary>
+        /// A* Algorithm. Calculates shortest path from start point to end point
+        /// </summary>
+        /// <param name="start">The start point to calculate from</param>
+        /// <param name="end">The destination to calculate pathfinding for</param>
         public void AStar(Cell start, Cell end)
         {
             Cell current = null;
             Cell parent = null;
-        
+
             Grid[start.Position.X, start.Position.Y].G = 0;
             OpenList.Add(start);
             CalculateH(end);
@@ -306,7 +319,7 @@ namespace Grid
                     GeneratePath(parent, current);
                     OpenList.Clear();
                     ClosedList.Clear();
-                    foreach(Cell cell in Grid)
+                    foreach (Cell cell in Grid)
                     {
                         cell.G = 0;
                         cell.H = 0;
@@ -343,8 +356,8 @@ namespace Grid
                         }
                     } while (swapped);
                     current = OpenList[0];
-                    
-                    
+
+
                 }
                 if (current.Position.X == 2 && current.Position.Y == 6)
                 {
@@ -373,26 +386,14 @@ namespace Grid
             }
         }
 
-        public void GeneratePath(Cell parent, Cell current)
+        public void GeneratePath(Cell parent, Cell current) //Draws the path that's been found from the closed list
         {
-            if (ClosedList.Count > 0)
+           // List<Cell> oldCell = new List<Cell>(); : for use if we want to clear previous cell.
+            SolidBrush b = new SolidBrush(Color.Red);
+            foreach (Cell cell in ClosedList)
             {
-                SolidBrush b = new SolidBrush(Color.Red);
-                foreach (Cell cell in ClosedList)
-                {
-                    cell.sprite = Image.FromFile(@"Images\RedX.png");
-                    Render();
-                }
-            }
-            else
-            {
-                foreach(Cell cell in ClosedList)
-                {
-                    if (cell.sprite == Image.FromFile(@"Images\RedX.png"))
-                    {
-                        cell.Sprite = null;
-                    }
-                }
+                cell.sprite = Image.FromFile(@"Images\RedX.png");
+                Render();
             }
         }
 
