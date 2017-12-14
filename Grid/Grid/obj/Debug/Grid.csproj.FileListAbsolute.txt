@@ -98,3 +98,15 @@ C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csprojReso
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Form1.resources
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\groundSingleTile.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\key.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\oneEyeMonster.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\path.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\portalA.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\portalB.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\redMonster.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\threeEyeMonster.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\tower.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\treeSingle.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\wallSingleTile.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\wizardFront.png
