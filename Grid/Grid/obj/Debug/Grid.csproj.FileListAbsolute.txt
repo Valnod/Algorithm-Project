@@ -77,25 +77,3 @@ C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\tower.p
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\treeSingle.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\wallSingleTile.png
 C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\bin\Debug\Images\wizardFront.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\groundSingleTile.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\key.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\oneEyeMonster.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\path.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\portalA.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\portalB.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\redMonster.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\threeEyeMonster.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\tower.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\treeSingle.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Wall.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Goal.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\Start.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\wallSingleTile.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\wizardFront.png
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Grid.exe
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Grid.pdb
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Form1.resources
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
-C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
-C:\Users\Asbjoern\Documents\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache

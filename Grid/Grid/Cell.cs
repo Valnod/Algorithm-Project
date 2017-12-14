@@ -27,7 +27,9 @@ namespace Grid
         public int G { get; set; }
         public int H { get; set; }
         public bool Walkable { get; set; }
-        
+
+        public int X { get; set; }
+        public int Y { get; set; }
 
         /// <summary>
         /// The size of the cell
@@ -47,7 +49,7 @@ namespace Grid
 
         //TODO: Maybe make myType as property so A* can check it
 
-        public Point Position { get { return position; } set { position = value; } }
+        public Point Position { get { return position; } }
 
         /// <summary>
         /// The bounding rectangle of the cell
