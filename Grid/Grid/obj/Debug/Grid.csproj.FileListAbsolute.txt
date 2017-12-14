@@ -39,7 +39,6 @@ C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\De
 C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.pdb
 C:\Users\Asbjoern\Dropbox\Dokumenter\Dania 2015-2018\Algoritmer\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
 D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Grid.exe.config
-D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
 D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.Form1.resources
 D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
 D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
@@ -110,3 +109,4 @@ D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\tower.png
 D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\treeSingle.png
 D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\wallSingleTile.png
 D:\Dokumenter\Algorithm-Project\Grid\Grid\bin\Debug\Images\wizardFront.png
+D:\Dokumenter\Algorithm-Project\Grid\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
