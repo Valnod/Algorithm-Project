@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,9 @@ namespace Grid
         private BufferedGraphics backBuffer;
         private Graphics dc;
         private Rectangle displayRectangle;
+        private Stopwatch sw = new Stopwatch();
 
-        Image wizard = Image.FromFile(@"Images\wizardFrontUpdate.png"); //Startobject
+        public Image wizard = Image.FromFile(@"Images\wizardFrontUpdate.png"); //Startobject
         Image portal = Image.FromFile(@"Images\PortalUpdate.png"); //Portal
         Image tower1 = Image.FromFile(@"Images\Tower1Update.png"); //Tower1
         Image tower2 = Image.FromFile(@"Images\Tower2Update.png"); //Endobject
@@ -146,6 +148,7 @@ namespace Grid
                 }
             }
             CreateOpenList();
+            CreateClosedList();
         }
 
         public void CalculateG(Cell input)
@@ -284,7 +287,7 @@ namespace Grid
         {
             Cell current = null;
             Cell parent = null;
-            CreateClosedList();
+        
             Grid[start.Position.X, start.Position.Y].G = 0;
             OpenList.Add(start);
             CalculateH(end);
@@ -371,6 +374,7 @@ namespace Grid
             foreach (Cell cell in ClosedList)
             {
                cell.Sprite = Image.FromFile(@"Images\tower.png");
+                cell.sprite = Image.FromFile(@"Images\RedX.png");
             }
         }
 

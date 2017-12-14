@@ -136,25 +136,25 @@ namespace Grid
             wallCount += 1;
             if (clickType == START) //If the click type is START
             {
-                sprite = Image.FromFile(@"Images\wizardFront.png");
+                //sprite = Image.FromFile(@"Images\wizardFront.png");
                 myType = clickType;
                 clickType = TOWER1;
             }
             else if (clickType == TOWER1 && myType != START) //If the click type is GOAL
             {
-                sprite = Image.FromFile(@"Images\tower.png");
+                //sprite = Image.FromFile(@"Images\tower.png");
                 myType = TOWER1;
                 clickType = TOWER2;
             }
             else if (clickType == TOWER2 && myType != START && myType != TOWER1 && myType != TOWER2) //If the click type is WALL
             {
-                sprite = Image.FromFile(@"Images\portalB.png");
+                //sprite = Image.FromFile(@"Images\portalB.png");
                 myType = TOWER2;
                 clickType = KEY1;
             }
             else if (clickType == KEY1 && myType != START && myType != TOWER1 && myType != TOWER2 && myType != KEY1)
             {
-                sprite = Image.FromFile(@"Images\key.png");
+                //sprite = Image.FromFile(@"Images\key.png");
                 myType = KEY1;
                 clickType = KEY2;
             }
