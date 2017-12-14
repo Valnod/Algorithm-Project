@@ -377,15 +377,11 @@ namespace Grid
         {
             if (ClosedList.Count > 0)
             {
-                int step = 0;
                 SolidBrush b = new SolidBrush(Color.Red);
                 foreach (Cell cell in ClosedList)
                 {
                     cell.sprite = Image.FromFile(@"Images\RedX.png");
-                    dc.DrawString(string.Format("Step: {0}", step), new Font("Arial", 10, FontStyle.Regular), new SolidBrush(Color.Black), cell.Position.X * cell.CellSize, (cell.Position.Y * cell.CellSize) + 0);
                     Render();
-                    step++;
-
                 }
             }
             else
