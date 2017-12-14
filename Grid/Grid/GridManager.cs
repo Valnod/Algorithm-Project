@@ -42,8 +42,8 @@ namespace Grid
        
 
         Random rnd = new Random();
-        int randomValueX;
-        int randomValueY;
+        public int randomValueX;
+        public int randomValueY;
         int randomValueX2;
         int randomValueY2;
         private CellType clickType;
@@ -327,7 +327,7 @@ namespace Grid
             SolidBrush b = new SolidBrush(Color.Red);
             foreach (Cell cell in ClosedList)
             {
-                cell.Sprite = Image.FromFile(@"Images\tower.png");
+                cell.Sprite = Image.FromFile(@"Images\RedX.png");
             }
         }
 

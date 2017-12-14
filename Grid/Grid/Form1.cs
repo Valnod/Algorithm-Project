@@ -39,7 +39,7 @@ namespace Grid
 
             visualManager.ClickCell(this.PointToClient(Cursor.Position));
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
-                visualManager.AStar(visualManager.Grid[1, 1], visualManager.Grid[7, 1]);
+                visualManager.AStar(visualManager.Grid[1, 7], visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY]);
 
             //visualManager.ClickCell(this.PointToClient(Cursor.Position));
 
