@@ -99,3 +99,5 @@ C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Form1.reso
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.Properties.Resources.resources
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\obj\Debug\Grid.csproj.GenerateResource.Cache
 C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\key2.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\tree.png
+C:\Users\Windows\Documents\Algorithm Project\Grid\Grid\bin\Debug\Images\groundTileUpdate.png

@@ -41,10 +41,12 @@ namespace Grid
         /// </summary>
         public Image sprite;
 
+        private Image tiles = Image.FromFile(@"Images\groundTileUpdate.png");
+
         /// <summary>
         /// Sets the celltype to empty as default
         /// </summary>
-        CellType myType = EMPTY;
+        public CellType myType = EMPTY;
         private int wallCount;
 
         //TODO: Maybe make myType as property so A* can check it
@@ -85,7 +87,7 @@ namespace Grid
             //Draws the rectangles color
             dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
 
-            dc.DrawImage(Image.FromFile(@"Images\groundSingleTile.png"), BoundingRectangle); //Need to resize
+            dc.DrawImage(tiles, BoundingRectangle); //Need to resize
 
             //Draws the rectangles border
             dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);

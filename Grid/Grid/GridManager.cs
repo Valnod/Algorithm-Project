@@ -21,6 +21,8 @@ namespace Grid
         Image tower2 = Image.FromFile(@"Images\portalB.png"); //Endobject
         Image key1 = Image.FromFile(@"Images\key.png"); //First key
         Image key2 = Image.FromFile(@"Images\key.png"); //Second key
+        Image tree = Image.FromFile(@"Images\treeSingle.png"); //Tree
+        Image trees = Image.FromFile(@"Images\tree.png"); //Multible trees
 
         public List<Cell> ClosedList { get; set; }
         public List<Cell> OpenList { get; set; }
@@ -38,6 +40,9 @@ namespace Grid
         //  private Astar aStar;
 
         Random rnd = new Random();
+        int randomValueX;
+        int randomValue1;
+        int randomValue2;
 
         /// <summary>
         /// The current click type
@@ -67,6 +72,9 @@ namespace Grid
             CreateGrid(10,10);
             //aStar = new Astar();
             //Console.WriteLine("{0}{1}{2}");
+            randomValueX = rnd.Next(0, 9);
+            randomValue1 = rnd.Next(0, 1);
+            randomValue2 = rnd.Next(3, 4);
         }
 
         public Cell this[int x, int y]
@@ -282,8 +290,10 @@ namespace Grid
             grid[2, 7].sprite = wizard;
             grid[2, 2].sprite = tower1;
             grid[8, 5].sprite = tower2;
-            grid[rnd.Next(0, 9), rnd.Next(0, 1)].sprite = key1;
-            grid[rnd.Next(0, 9), rnd.Next(3, 4)].sprite = key2;            
+            grid[randomValueX, randomValue1].sprite = key1;
+            grid[randomValueX, randomValue2].sprite = key2;
+            grid[4, 5].sprite = trees;
+            grid[5, 5].sprite = trees;
 
             //grid[2, 6].Click(ref clickType); //Wizard
             //grid[2, 3].Click(ref clickType); //Tower1

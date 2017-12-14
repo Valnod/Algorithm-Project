@@ -19,7 +19,7 @@ namespace Grid
             InitializeComponent();
 
             //Sets the client size
-            ClientSize = new Size(800, 800);
+            ClientSize = new Size(750, 600);
 
             //Instantiates the visual manager
             visualManager = new GridManager(CreateGraphics(), this.DisplayRectangle);
