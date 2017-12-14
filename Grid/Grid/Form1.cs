@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace Grid
     public partial class Form1 : Form
     {
         private GridManager visualManager;
+
+        bool first = false;
 
         public Form1()
         {
@@ -36,6 +39,19 @@ namespace Grid
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             //Checks if we clicked a cell
+
+            visualManager.ClickCell(this.PointToClient(Cursor.Position));
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                visualManager.AStar(visualManager.Grid[1, 7], visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY]);
+                first = true;
+                visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY].sprite = visualManager.wizard; //Muligvis
+            }
+            //if (first == true)
+            //{
+            //    visualManager.AStar(visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY], visualManager.Grid[2, 2]);
+            //    visualManager.Grid[2, 2].sprite = visualManager.wizard;
+            //}
             //visualManager.ClickCell(this.PointToClient(Cursor.Position));
         }
 

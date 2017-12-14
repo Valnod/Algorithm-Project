@@ -40,6 +40,18 @@
   <ItemGroup>
     <Compile Include="Astar.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="ComponentPattern\Component.cs" />
+    <Compile Include="ComponentPattern\Transform.cs" />
+    <Compile Include="GameWorld.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="ComponentPattern\Components\Component.cs" />
+    <Compile Include="ComponentPattern\Components\IDrawable.cs" />
+    <Compile Include="ComponentPattern\Components\ILoadable.cs" />
+    <Compile Include="ComponentPattern\Components\SpriteRenderer.cs" />
+    <Compile Include="ComponentPattern\Components\Transform.cs" />
+    <Compile Include="ComponentPattern\Node.cs" />
+    <Compile Include="GameWorld.cs" />
+    <Compile Include="ComponentPattern\GameObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

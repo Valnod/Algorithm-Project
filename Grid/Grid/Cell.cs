@@ -27,9 +27,7 @@ namespace Grid
         public int G { get; set; }
         public int H { get; set; }
         public bool Walkable { get; set; }
-
-        public int X { get; set; }
-        public int Y { get; set; }
+        
 
         /// <summary>
         /// The size of the cell
@@ -44,6 +42,8 @@ namespace Grid
         private Image grasTile = Image.FromFile(@"Images\groundTileUpdate.png"); //Default
         private Image pathTile = Image.FromFile(@"Images\PathUpdate.png"); //Path
 
+        public Image Sprite { get { return sprite; } set { sprite = value; } }
+
         /// <summary>
         /// Sets the celltype to empty as default
         /// </summary>
@@ -52,7 +52,7 @@ namespace Grid
 
         //TODO: Maybe make myType as property so A* can check it
 
-        public Point Position { get { return position; } }
+        public Point Position { get { return position; } set { position = value; } }
 
         /// <summary>
         /// The bounding rectangle of the cell
@@ -136,25 +136,25 @@ namespace Grid
             wallCount += 1;
             if (clickType == START) //If the click type is START
             {
-                sprite = Image.FromFile(@"Images\wizardFront.png");
+                //sprite = Image.FromFile(@"Images\wizardFront.png");
                 myType = clickType;
                 clickType = TOWER1;
             }
             else if (clickType == TOWER1 && myType != START) //If the click type is GOAL
             {
-                sprite = Image.FromFile(@"Images\tower.png");
+                //sprite = Image.FromFile(@"Images\tower.png");
                 myType = TOWER1;
                 clickType = TOWER2;
             }
             else if (clickType == TOWER2 && myType != START && myType != TOWER1 && myType != TOWER2) //If the click type is WALL
             {
-                sprite = Image.FromFile(@"Images\portalB.png");
+                //sprite = Image.FromFile(@"Images\portalB.png");
                 myType = TOWER2;
                 clickType = KEY1;
             }
             else if (clickType == KEY1 && myType != START && myType != TOWER1 && myType != TOWER2 && myType != KEY1)
             {
-                sprite = Image.FromFile(@"Images\key.png");
+                //sprite = Image.FromFile(@"Images\key.png");
                 myType = KEY1;
                 clickType = KEY2;
             }
