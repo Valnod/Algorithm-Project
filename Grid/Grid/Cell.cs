@@ -27,7 +27,7 @@ namespace Grid
         public int G { get; set; }
         public int H { get; set; }
         public bool Walkable { get; set; } = true;
-        
+
 
         /// <summary>
         /// The size of the cell
@@ -54,7 +54,6 @@ namespace Grid
         /// Sets the celltype to empty as default
         /// </summary>
         public CellType myType = EMPTY;
-        private int wallCount;
 
         //TODO: Maybe make myType as property so A* can check it
 
@@ -86,7 +85,7 @@ namespace Grid
         }
 
         /// <summary>
-        /// Renders the cell
+        /// Renders the default cell background
         /// </summary>
         /// <param name="dc">The graphic context</param>
         public void Render(Graphics dc)
@@ -94,7 +93,7 @@ namespace Grid
             //Draws the rectangles color
             dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
 
-            dc.DrawImage(grasTile, BoundingRectangle); //Need to resize
+            dc.DrawImage(grasTile, BoundingRectangle); //Gives the cells the background
 
             //Draws the rectangles border
             dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);
@@ -104,13 +103,13 @@ namespace Grid
             {
                 dc.DrawImage(sprite, BoundingRectangle);
             }
-            
+
             //Write's the cells grid position
             dc.DrawString(string.Format("{0}", position), new Font("Arial", 7, FontStyle.Regular), new SolidBrush(Color.Black), position.X * cellSize, (position.Y * cellSize) + 10);
         }
 
         /// <summary>
-        /// Renders the cell
+        /// Renders the path cell background
         /// </summary>
         /// <param name="dc">The graphic context</param>
         public void Render2(Graphics dc)
@@ -118,7 +117,7 @@ namespace Grid
             //Draws the rectangles color
             dc.FillRectangle(new SolidBrush(Color.White), BoundingRectangle);
 
-            dc.DrawImage(pathTile, BoundingRectangle); //Need to resize
+            dc.DrawImage(pathTile, BoundingRectangle); //Gives the cells the background
 
             //Draws the rectangles border
             dc.DrawRectangle(new Pen(Color.Black), BoundingRectangle);
@@ -134,12 +133,11 @@ namespace Grid
         }
 
         /// <summary>
-        /// Clicks the cell
+        /// Fra lærernes originale eksempel. Bliver ikke rigtig brugt
         /// </summary>
         /// <param name="clickType">The click type</param>
         public void Click(ref CellType clickType)
         {
-            wallCount += 1;
             if (clickType == START) //If the click type is START
             {
                 //sprite = Image.FromFile(@"Images\wizardFront.png");
@@ -164,11 +162,11 @@ namespace Grid
                 myType = KEY1;
                 clickType = KEY2;
             }
-            //else if (clickType == WALL && myType == WALL) //If the click type is WALL
-            //{ 
-            //    sprite = null;
-            //    myType = EMPTY;
-            //}
+            else if (clickType == WALL && myType == WALL) //If the click type is WALL
+            {
+                sprite = null;
+                myType = EMPTY;
+            }
         }
     }
 }
