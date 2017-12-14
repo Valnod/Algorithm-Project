@@ -388,12 +388,16 @@ namespace Grid
 
         public void GeneratePath(Cell parent, Cell current) //Draws the path that's been found from the closed list
         {
+
            // List<Cell> oldCell = new List<Cell>(); : for use if we want to clear previous cell.
             SolidBrush b = new SolidBrush(Color.Red);
             foreach (Cell cell in ClosedList)
             {
-                cell.sprite = Image.FromFile(@"Images\RedX.png");
-                Render();
+                if (cell.Sprite != tower1 && cell.sprite != tower2 && cell.sprite != key1 && cell.sprite != key2)
+                {
+                    cell.sprite = Image.FromFile(@"Images\RedX.png");
+                    Render();
+                }
             }
         }
 
