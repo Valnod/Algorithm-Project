@@ -34,6 +34,12 @@ namespace Grid
         /// </summary>
         private int cellSize;
 
+        public int CellSize
+        {
+            get { return cellSize; }
+            set { cellSize = value; }
+        }
+
         /// <summary>
         /// The cell's sprite
         /// </summary>

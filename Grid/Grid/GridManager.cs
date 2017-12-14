@@ -46,8 +46,8 @@ namespace Grid
         Random rnd = new Random();
         public int randomValueX;
         public int randomValueY;
-        int randomValueX2;
-        int randomValueY2;
+        public int randomValueX2;
+        public int randomValueY2;
         private CellType clickType;
         private bool unwalkablePathOne;
         private bool unwalkablePathTwo;
@@ -306,6 +306,11 @@ namespace Grid
                     GeneratePath(parent, current);
                     OpenList.Clear();
                     ClosedList.Clear();
+                    foreach(Cell cell in Grid)
+                    {
+                        cell.G = 0;
+                        cell.H = 0;
+                    }
 
                     // for (int i = 0; i > 0; i++)
 
@@ -370,11 +375,28 @@ namespace Grid
 
         public void GeneratePath(Cell parent, Cell current)
         {
-            SolidBrush b = new SolidBrush(Color.Red);
-            foreach (Cell cell in ClosedList)
+            if (ClosedList.Count > 0)
             {
-               cell.Sprite = Image.FromFile(@"Images\tower.png");
-                cell.sprite = Image.FromFile(@"Images\RedX.png");
+                int step = 0;
+                SolidBrush b = new SolidBrush(Color.Red);
+                foreach (Cell cell in ClosedList)
+                {
+                    cell.sprite = Image.FromFile(@"Images\RedX.png");
+                    dc.DrawString(string.Format("Step: {0}", step), new Font("Arial", 10, FontStyle.Regular), new SolidBrush(Color.Black), cell.Position.X * cell.CellSize, (cell.Position.Y * cell.CellSize) + 0);
+                    Render();
+                    step++;
+
+                }
+            }
+            else
+            {
+                foreach(Cell cell in ClosedList)
+                {
+                    if (cell.sprite == Image.FromFile(@"Images\RedX.png"))
+                    {
+                        cell.Sprite = null;
+                    }
+                }
             }
         }
 

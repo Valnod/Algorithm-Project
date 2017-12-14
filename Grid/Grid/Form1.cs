@@ -16,6 +16,9 @@ namespace Grid
         private GridManager visualManager;
 
         bool first = false;
+        private bool second;
+        private bool third;
+        private bool fourth;
 
         public Form1()
         {
@@ -43,16 +46,44 @@ namespace Grid
             visualManager.ClickCell(this.PointToClient(Cursor.Position));
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                visualManager.AStar(visualManager.Grid[1, 7], visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY]);
                 first = true;
-                visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY].sprite = visualManager.wizard; //Muligvis
+                if (second == true)
+                {
+                    //From randomly placed key's position to default tower 1 position
+                    visualManager.AStar(visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY], 
+                        visualManager.Grid[2, 2]);
+                    visualManager.Grid[2, 2].sprite = visualManager.wizard;
+                    second = false; ;
+                    third = true;
+                   // visualManager.ClickCell(this.PointToClient(Cursor.Position));
+                }
+                if (third == true)
+                {
+                    //From default tower 1 position to random key 2 position
+                    visualManager.AStar(visualManager.Grid[2,2],
+                        visualManager.Grid[visualManager.randomValueX2, visualManager.randomValueY2]);
+                    visualManager.Grid[visualManager.randomValueX2, visualManager.randomValueY2].sprite = visualManager.wizard;
+                    third = false;
+                    fourth = true;
+                }
+                if (fourth == true)
+                {
+                    //From key 2's random position to final tower
+                    visualManager.AStar(visualManager.Grid[visualManager.randomValueX2, visualManager.randomValueY2], visualManager.Grid[8, 5]);
+                    visualManager.Grid[8, 5].sprite = visualManager.wizard;
+                    fourth = false;
+                }
+
+                if (first == true)
+                {
+                    //From default start position to randomly placed key's position
+                    visualManager.AStar(visualManager.Grid[1, 7], visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY]);
+                    visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY].sprite = visualManager.wizard;
+                    first = false;
+                    second = true;
+                }
+                
             }
-            //if (first == true)
-            //{
-            //    visualManager.AStar(visualManager.Grid[visualManager.randomValueX, visualManager.randomValueY], visualManager.Grid[2, 2]);
-            //    visualManager.Grid[2, 2].sprite = visualManager.wizard;
-            //}
-            //visualManager.ClickCell(this.PointToClient(Cursor.Position));
         }
 
         private void Form1_Load(object sender, EventArgs e)
