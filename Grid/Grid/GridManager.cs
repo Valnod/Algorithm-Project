@@ -353,8 +353,10 @@ namespace Grid
                         current = cell;
                     }
                 }
-                if (current == parent) //If current doesn't find something with a smaller value than itself, it finds the smallest among the open list with Bubble sort.
+                if (current == parent) //If current doesn't find something with a smaller value than itself, 
+                                       //it finds the smallest among the open list with Bubble sort.
                 {
+                    //Bubblesort F for first
                     bool swapped;
                     do
                     {
